@@ -1,0 +1,417 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{00944343-F543-4E8B-9158-F6C0A0F9B9F6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PD.DataLayer</RootNamespace>
+    <AssemblyName>PD.DataLayer</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EFUtil.Core">
+      <HintPath>..\packages\EntityFramework.Extras.0.9.4.0\lib\net40\EFUtil.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="EFUtil.Repository">
+      <HintPath>..\packages\EntityFramework.Extras.0.9.4.0\lib\net40\EFUtil.Repository.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject">
+      <HintPath>..\packages\Ninject.3.2.2.0\lib\net45-full\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject.Web.Common">
+      <HintPath>..\packages\Ninject.Web.Common.3.2.3.0\lib\net45-full\Ninject.Web.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject.Web.WebApi">
+      <HintPath>..\packages\Ninject.Web.WebApi.3.2.2.0\lib\net45-full\Ninject.Web.WebApi.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.0.0\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.0.0\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.0.1\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Migrations\201409011557559_tt.cs" />
+    <Compile Include="Migrations\201409011557559_tt.Designer.cs">
+      <DependentUpon>201409011557559_tt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201409031429580_Creation.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Migrations\201409031429580_Creation.Designer.cs">
+      <DependentUpon>201409031429580_Creation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201409041035176_nullGender.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Migrations\201409041035176_nullGender.Designer.cs">
+      <DependentUpon>201409041035176_nullGender.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201409060634431_cxc.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Migrations\201409060634431_cxc.Designer.cs">
+      <DependentUpon>201409060634431_cxc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201409060725328_cxcx.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Migrations\201409060725328_cxcx.Designer.cs">
+      <DependentUpon>201409060725328_cxcx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201409071114359_AddingExperienceTable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Migrations\201409071114359_AddingExperienceTable.Designer.cs">
+      <DependentUpon>201409071114359_AddingExperienceTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201409071146367_Adding Country&amp;Region to UserProfile.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Migrations\201409071146367_Adding Country&amp;Region to UserProfile.Designer.cs">
+      <DependentUpon>201409071146367_Adding Country&amp;Region to UserProfile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201409071208144_IdentityFix.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Migrations\201409071208144_IdentityFix.Designer.cs">
+      <DependentUpon>201409071208144_IdentityFix.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201409071217517_FKFix.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Migrations\201409071217517_FKFix.Designer.cs">
+      <DependentUpon>201409071217517_FKFix.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201409071354478_GenderFix.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Migrations\201409071354478_GenderFix.Designer.cs">
+      <DependentUpon>201409071354478_GenderFix.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201409171258236_Category&amp;SubCategory_MaxLength.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Migrations\201409171258236_Category&amp;SubCategory_MaxLength.Designer.cs">
+      <DependentUpon>201409171258236_Category&amp;SubCategory_MaxLength.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201409171407375_ComptencyTitle_MaxLength.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Migrations\201409171407375_ComptencyTitle_MaxLength.Designer.cs">
+      <DependentUpon>201409171407375_ComptencyTitle_MaxLength.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201409211311424_changeDatetimetype.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Migrations\201409211311424_changeDatetimetype.Designer.cs">
+      <DependentUpon>201409211311424_changeDatetimetype.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201409240846231_CreateTitleTable_AddTitleColoumnInUserProfile.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Migrations\201409240846231_CreateTitleTable_AddTitleColoumnInUserProfile.Designer.cs">
+      <DependentUpon>201409240846231_CreateTitleTable_AddTitleColoumnInUserProfile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201409240859200_CreateCountryTable_RegionTable_AddColumnRegionAndCountryInUserProfile.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Migrations\201409240859200_CreateCountryTable_RegionTable_AddColumnRegionAndCountryInUserProfile.Designer.cs">
+      <DependentUpon>201409240859200_CreateCountryTable_RegionTable_AddColumnRegionAndCountryInUserProfile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201409241108497_ImanChange.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Migrations\201409241108497_ImanChange.Designer.cs">
+      <DependentUpon>201409241108497_ImanChange.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201409241217498_testUpdateCountry.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Migrations\201409241217498_testUpdateCountry.Designer.cs">
+      <DependentUpon>201409241217498_testUpdateCountry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201409241424087_FixingForignKeys.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Migrations\201409241424087_FixingForignKeys.Designer.cs">
+      <DependentUpon>201409241424087_FixingForignKeys.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201409241426178_TitlenotNull.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Migrations\201409241426178_TitlenotNull.Designer.cs">
+      <DependentUpon>201409241426178_TitlenotNull.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201409241540117_removeJobTitleColumnFromUserProfile.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Migrations\201409241540117_removeJobTitleColumnFromUserProfile.Designer.cs">
+      <DependentUpon>201409241540117_removeJobTitleColumnFromUserProfile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201409250939238_AddColumn_JoinedDate_toUserProfileTable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Migrations\201409250939238_AddColumn_JoinedDate_toUserProfileTable.Designer.cs">
+      <DependentUpon>201409250939238_AddColumn_JoinedDate_toUserProfileTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201409250943531_JoinedDateColumn_RequiredAndDateTime.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Migrations\201409250943531_JoinedDateColumn_RequiredAndDateTime.Designer.cs">
+      <DependentUpon>201409250943531_JoinedDateColumn_RequiredAndDateTime.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201409280954522_AddExpercienceFields.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Migrations\201409280954522_AddExpercienceFields.Designer.cs">
+      <DependentUpon>201409280954522_AddExpercienceFields.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201409291046172_MakeExperianceEndDateNullable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Migrations\201409291046172_MakeExperianceEndDateNullable.Designer.cs">
+      <DependentUpon>201409291046172_MakeExperianceEndDateNullable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201409291203045_AddingNumberOfSeatsToCourseTable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Migrations\201409291203045_AddingNumberOfSeatsToCourseTable.Designer.cs">
+      <DependentUpon>201409291203045_AddingNumberOfSeatsToCourseTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201409291213201_AddingCourseTypeToCourse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Migrations\201409291213201_AddingCourseTypeToCourse.Designer.cs">
+      <DependentUpon>201409291213201_AddingCourseTypeToCourse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201409291452321_AddingRequestTable&amp;AvalibaleSeatsInCourse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Migrations\201409291452321_AddingRequestTable&amp;AvalibaleSeatsInCourse.Designer.cs">
+      <DependentUpon>201409291452321_AddingRequestTable&amp;AvalibaleSeatsInCourse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201409291506007_requestTable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Migrations\201409291506007_requestTable.Designer.cs">
+      <DependentUpon>201409291506007_requestTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201410011347065_AddMaritalStatusTableAndForeginKeyInUserProfile.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Migrations\201410011347065_AddMaritalStatusTableAndForeginKeyInUserProfile.Designer.cs">
+      <DependentUpon>201410011347065_AddMaritalStatusTableAndForeginKeyInUserProfile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201410011450254_AddingNumberOfYearsForExperiance.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Migrations\201410011450254_AddingNumberOfYearsForExperiance.Designer.cs">
+      <DependentUpon>201410011450254_AddingNumberOfYearsForExperiance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201410020708549_renameMaritalStatusColumns.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Migrations\201410020708549_renameMaritalStatusColumns.Designer.cs">
+      <DependentUpon>201410020708549_renameMaritalStatusColumns.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201410141024043_UpdateCourseTable_AddColumns_Location_SessionsOccur.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Migrations\201410141024043_UpdateCourseTable_AddColumns_Location_SessionsOccur.Designer.cs">
+      <DependentUpon>201410141024043_UpdateCourseTable_AddColumns_Location_SessionsOccur.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201410141039396_AddStartDate&amp;EndDateToSession.cs" />
+    <Compile Include="Migrations\201410141039396_AddStartDate&amp;EndDateToSession.Designer.cs">
+      <DependentUpon>201410141039396_AddStartDate&amp;EndDateToSession.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201410151146531_test.cs" />
+    <Compile Include="Migrations\201410151146531_test.Designer.cs">
+      <DependentUpon>201410151146531_test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201410151214111_removetest.cs" />
+    <Compile Include="Migrations\201410151214111_removetest.Designer.cs">
+      <DependentUpon>201410151214111_removetest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="ProfessionalDevelopmentEntities.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PD.Contracts\PD.Contracts.csproj">
+      <Project>{a6e8d67a-4a85-4ede-85f3-97b98feaa158}</Project>
+      <Name>PD.Contracts</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201409011557559_tt.resx">
+      <DependentUpon>201409011557559_tt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201409031429580_Creation.resx">
+      <DependentUpon>201409031429580_Creation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201409041035176_nullGender.resx">
+      <DependentUpon>201409041035176_nullGender.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201409060634431_cxc.resx">
+      <DependentUpon>201409060634431_cxc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201409060725328_cxcx.resx">
+      <DependentUpon>201409060725328_cxcx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201409071114359_AddingExperienceTable.resx">
+      <DependentUpon>201409071114359_AddingExperienceTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201409071146367_Adding Country&amp;Region to UserProfile.resx">
+      <DependentUpon>201409071146367_Adding Country&amp;Region to UserProfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201409071208144_IdentityFix.resx">
+      <DependentUpon>201409071208144_IdentityFix.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201409071217517_FKFix.resx">
+      <DependentUpon>201409071217517_FKFix.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201409071354478_GenderFix.resx">
+      <DependentUpon>201409071354478_GenderFix.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201409171258236_Category&amp;SubCategory_MaxLength.resx">
+      <DependentUpon>201409171258236_Category&amp;SubCategory_MaxLength.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201409171407375_ComptencyTitle_MaxLength.resx">
+      <DependentUpon>201409171407375_ComptencyTitle_MaxLength.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201409211311424_changeDatetimetype.resx">
+      <DependentUpon>201409211311424_changeDatetimetype.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201409240846231_CreateTitleTable_AddTitleColoumnInUserProfile.resx">
+      <DependentUpon>201409240846231_CreateTitleTable_AddTitleColoumnInUserProfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201409240859200_CreateCountryTable_RegionTable_AddColumnRegionAndCountryInUserProfile.resx">
+      <DependentUpon>201409240859200_CreateCountryTable_RegionTable_AddColumnRegionAndCountryInUserProfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201409241108497_ImanChange.resx">
+      <DependentUpon>201409241108497_ImanChange.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201409241217498_testUpdateCountry.resx">
+      <DependentUpon>201409241217498_testUpdateCountry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201409241424087_FixingForignKeys.resx">
+      <DependentUpon>201409241424087_FixingForignKeys.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201409241426178_TitlenotNull.resx">
+      <DependentUpon>201409241426178_TitlenotNull.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201409241540117_removeJobTitleColumnFromUserProfile.resx">
+      <DependentUpon>201409241540117_removeJobTitleColumnFromUserProfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201409250939238_AddColumn_JoinedDate_toUserProfileTable.resx">
+      <DependentUpon>201409250939238_AddColumn_JoinedDate_toUserProfileTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201409250943531_JoinedDateColumn_RequiredAndDateTime.resx">
+      <DependentUpon>201409250943531_JoinedDateColumn_RequiredAndDateTime.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201409280954522_AddExpercienceFields.resx">
+      <DependentUpon>201409280954522_AddExpercienceFields.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201409291046172_MakeExperianceEndDateNullable.resx">
+      <DependentUpon>201409291046172_MakeExperianceEndDateNullable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201409291203045_AddingNumberOfSeatsToCourseTable.resx">
+      <DependentUpon>201409291203045_AddingNumberOfSeatsToCourseTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201409291213201_AddingCourseTypeToCourse.resx">
+      <DependentUpon>201409291213201_AddingCourseTypeToCourse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201409291452321_AddingRequestTable&amp;AvalibaleSeatsInCourse.resx">
+      <DependentUpon>201409291452321_AddingRequestTable&amp;AvalibaleSeatsInCourse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201409291506007_requestTable.resx">
+      <DependentUpon>201409291506007_requestTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201410011347065_AddMaritalStatusTableAndForeginKeyInUserProfile.resx">
+      <DependentUpon>201410011347065_AddMaritalStatusTableAndForeginKeyInUserProfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201410011450254_AddingNumberOfYearsForExperiance.resx">
+      <DependentUpon>201410011450254_AddingNumberOfYearsForExperiance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201410020708549_renameMaritalStatusColumns.resx">
+      <DependentUpon>201410020708549_renameMaritalStatusColumns.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201410141024043_UpdateCourseTable_AddColumns_Location_SessionsOccur.resx">
+      <DependentUpon>201410141024043_UpdateCourseTable_AddColumns_Location_SessionsOccur.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201410141039396_AddStartDate&amp;EndDateToSession.resx">
+      <DependentUpon>201410141039396_AddStartDate&amp;EndDateToSession.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201410151146531_test.resx">
+      <DependentUpon>201410151146531_test.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201410151214111_removetest.resx">
+      <DependentUpon>201410151214111_removetest.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

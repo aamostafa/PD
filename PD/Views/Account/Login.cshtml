@@ -1,0 +1,12 @@
+﻿@model PD.Contracts.Entities.LoginModel
+
+@{
+    ViewBag.Title = "Log in";
+}
+@{
+    Html.RenderPartial("_LoginPartialView",Model);
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,11 @@
+﻿@model PD.Contracts.Entities.RegisterModel
+@{
+    ViewBag.Title = "Register";
+}
+
+
+@{Html.RenderPartial("_RegisterPartial",Model);}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

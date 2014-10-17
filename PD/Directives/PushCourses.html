@@ -1,0 +1,84 @@
+﻿<div id="Push-popup" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <header class="modal-header">
+                <h4 class="modal-title">{{"Push these courses"|translate}}</h4>
+                <button type="button" class="close" ng-click="cancelPushCourses()" data-dismiss="modal" aria-hidden="true">×</button>
+            </header>
+
+            <div class="push-courses-popup">
+                <ul class="selected-courses">
+                    <li ng-repeat="course in coursesToPush">
+                       {{course.Name}}
+                       <button ng-click="RemoveCourse(course)">X</button>
+                    </li>
+                </ul>
+                <div class="push-course-filter-cont">
+                    <header>Filter people</header>
+                    <div class="form-row">
+                        <span class="Title-item" ng-repeat="title in filters.Titles">
+                        <input type="checkbox"  value="title.Id">{{title.Name}}
+                            </span>
+                    </div>
+                    <div class="form-row">
+                        Gender :
+                    <select class="col-xs-12" id="section-dropdown"
+                                    name="GenderFilter"
+                                    ng-model="GenderFilter">
+                                <option value="">{{'All'|translate}}</option>
+                        <option value="Male">{{'Male'|translate}}</option>
+                        <option value="Female">{{'Female'|translate}}</option>
+                            </select>
+                        </div>
+
+                    <div class="form-row">
+                        New Comer :
+                    <select class="col-xs-12" id="Select1"
+                                    name="GenderFilter"
+                                    ng-model="NewComer">
+                                <option value="">{{'All'|translate}}</option>
+                        <option value="3">{{'3 Monthes'|translate}}</option>
+                        <option value="6">{{'6 Monthes'|translate}}</option>
+                            </select>
+                        </div>
+
+                    <div class="form-row">
+                        <label class=" input-label col-xs-2" for="txtcourseLocation">{{'bla bla'}}</label>
+                        <div class="col-xs-10">
+                            <input class="col-xs-12" type="text" />
+                        </div>
+                    </div>
+                    <div class="form-row multi-field-row">
+                        <div class="col-xs-3 first-set">
+                            <label class="input-label col-xs-12">{{'bla bla bla'}}</label>
+                            <input type="text" class="col-xs-12" />
+                        </div>
+                        <div class="col-xs-3">
+                            <label class="input-label col-xs-12">{{'bla bla'}}</label>
+                            <input type="text" class="col-xs-12" />
+                        </div>
+                    </div>
+                </div>
+                <ul class="people-listing">
+                    <li>
+                        <img />
+                        <h3>Alaa Diab</h3>
+                        <button>X</button>
+                    </li>
+                    <li>
+                        <img />
+                        <h3>Ahmed Salem</h3>
+                        <button>X</button>
+                    </li>
+                </ul>
+            </div>
+
+            <footer class="Competencies-action-btns">
+
+                <button ng-click="" class="filter-link pd-btn" title="Filter">{{"Assign"|translate}}</button>
+                <button ng-click="cancelPushCourses()" data-dismiss="modal" aria-hidden="true" class="cancel-link pd-btn btn-cancel" title="Cancel">{{"Cancel"|translate}}</button>
+
+            </footer>
+        </div>
+    </div>
+</div>

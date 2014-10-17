@@ -1,0 +1,49 @@
+﻿<fieldset>
+    <legend class="personal">{{'Personal Details'|translate}}</legend>
+    <div ng-show="personalDetailsEditMode">
+        <div class="form-row">
+            <span class="col-xs-2">
+                <label class="input-label">{{'Birthday'|translate}}</label>
+            </span>
+            <span class="col-xs-6">
+                <!--Place a DatePicker-->
+                <input type="text" id="birthDay-datepicker" class="form-control"
+                    ng-model="myBirthDay"
+                    data-date-format="dd-MMM-yyyy" data-autoclose="true" data-data-today-highlight="true"
+                    placeholder="{{'Select your Birthday'|translate}}" data-max-date="{{today}}" bs-datepicker />
+            </span>
+        </div>
+        <div class="form-row">
+            <span class="col-xs-2">
+                <label class="input-label">{{'Marital Status'|translate}}</label>
+                <div>
+                    <select class="col-xs-12"
+                        name="maritalStatusSelect"
+                        ng-model="maritalstatusId"
+                        ng-options="c.Id as c.Status for c in allMaritalStatuses">
+                        <option value="">{{'Select Marital Status'|translate}}</option>
+                    </select>
+                </div>
+            </span>
+        </div>
+        <footer>
+            <button class="save-session" ng-click="SavePersonalDetails(UserProfiles)">{{'Save'|translate}}</button>
+            <button class="cancel-session" ng-click="CancelPersonalDetails(UserProfiles)">{{'Cancel'|translate}}</button>
+        </footer>
+    </div>
+    <div ng-hide="personalDetailsEditMode">
+        <button class="edit-btn" ng-click="EditPersonalDetails()"></button>
+        <div ng-show="UserProfiles.BirthDay">
+            <label class="input-label">Birthday</label>
+            <time>{{UserProfiles.BirthDay|date:"dd-MMM-yyyy"}}</time>
+        </div>
+        <div ng-show="UserProfiles.MaritalStatus">
+            <label class="input-label">Marital Status</label>
+            <span class=" view-text">{{UserProfiles.MaritalStatus.Status}}</span>
+        </div>
+    </div>
+    <div id="divFirstTimeAboutMe" class="div-no-data" ng-show="UserProfiles.MaritalStatus == null && UserProfiles.BirthDay == null && !personalDetailsEditMode">
+        <span class="col-xs-12">{{'No Data Inserted'|translate}}</span>
+        <a ng-click="EditPersonalDetails()">{{'Add Your Personal Details'|translate}}</a>
+    </div>
+</fieldset>

@@ -1,0 +1,88 @@
+﻿<fieldset class="user-experience">
+    <legend class="experience">{{'Experience'|translate}}</legend>
+    <div ng-hide="myExperienceEditMode">
+        <div id="divNewSession" ng-click="AddExperience()" ng-show="UserProfiles.Experiences.length>0">
+            <a class="add-new-btn" ng-click="AddExperience()">{{'Add Experience'|translate}}</a>
+        </div>
+        <div class="experience-item" ng-repeat="experience in UserProfiles.Experiences">
+            <button class="edit-btn" ng-click="EditMyExperience(experience)"></button>
+
+            <span class="Firm-logo">
+                <img ng-src="{{experience.ImageUrl != NULL && experience.ImageUrl || '../content/common/images/thumbnail-default.jpg'}}" alt="{{'Profile Image'|translate}}" />
+            </span>
+
+            <div class="text-data col-xs-9">
+                <h3 class="experience-position">{{experience.Title}}</h3>
+                <span class="experience-org-name col-xs-12">{{experience.OrganisationName}}</span>
+                <div class="publishing-date col-xs-12">
+                    <time>{{experience.StartDate|date:"dd-MMM-yyyy"}}</time>
+                    <span ng-show="experience.EndDate" class="dashed">-</span>
+                    <time>{{experience.EndDate|date:"dd-MMM-yyyy"}}</time>
+                    <span ng-show="experience.YearsOfExperience>1"> ({{experience.YearsOfExperience}} {{'Years'|translate}})</span>
+                    <span ng-hide="experience.YearsOfExperience>1"> ({{experience.YearsOfExperience}} {{'Year'|translate}})</span>
+                </div>
+                <p>{{experience.JobDescription}}</p>
+            </div>
+        </div>
+        <div id="divNoData" class="div-no-data" ng-hide="UserProfiles.Experiences.length>0">
+            <span class="col-xs-12">{{'No Data Inserted'|translate}}</span>
+            <a ng-click="AddExperience()">{{'Add Your Experience'|translate}}</a>
+        </div>
+    </div>
+    <div ng-show="myExperienceEditMode">
+        <div class="edit-mood-cont">
+            <div class="side-border">
+                <span class="Firm-logo">
+                    <img ng-src="{{Experience.ImageUrl != NULL && Experience.ImageUrl || '../content/common/images/thumbnail-default.jpg'}}" alt="{{'Profile Image'|translate}}" />
+                    <file-upload url="Experience.ImageUrl" accept='image/*'></file-upload>
+                </span>
+            </div>
+            <div class="form-row multi-field-row">
+                <label id="ImgUploadValidation" class="validation-msg col-xs-12" style="display: none">{{'Invalid file, please upload an image'|translate}}</label>
+                <div class="col-xs-3 first-set">
+                    <label class="input-label col-xs-12">{{'Firm name'|translate}}<span class="astrisk">*</span></label>
+                    <input type="text" data-parsley-maxlength="255" id="FirmNameTxt" class="col-xs-12" ng-model="Experience.OrganisationName" data-parsley-group="block3" data-parsley-required-message="{{'Firm Name is Required.'|translate}}" required />
+                </div>
+                <div class="col-xs-3">
+                    <label class="input-label col-xs-12">{{'Title'|translate}}<span class="astrisk">*</span></label>
+                    <input type="text" id="TitleTxt" data-parsley-maxlength="255" class="col-xs-12" ng-model="Experience.Title" data-parsley-group="block3" data-parsley-required-message="{{'Title is Required.'|translate}}" required />
+                </div>
+            </div>
+            <div class="form-row">
+                <label class="input-label col-xs-10">{{'Location'|translate}}</label>
+                <input type="text" class="col-xs-3" data-parsley-maxlength="255" id="LocationTxt" class="col-xs-12" ng-model="Experience.Location" data-parsley-group="block3" />
+            </div>
+            <div class="form-row multi-field-row">
+                <label class="input-label col-xs-12">{{'Time Period'|translate}}<span class="astrisk">*</span></label>
+                <span class="dropdown col-xs-3">
+                    <input type="text" id="startDate-datepicker" class="form-control" ng-model="Experience.StartDate" ng-change="DateChanged()"
+                           data-date-format="dd-MMM-yyyy" data-autoclose="true" data-data-today-highlight="true"
+                           data-max-date="{{Experience.EndDate||today}}" placeholder="{{'Start Date'|translate}}" data-parsley-trigger="change"
+                           data-parsley-group="block3" data-parsley-required-message="{{'Start Date is required.'|translate}}" required
+                           bs-datepicker>
+                </span>
+                <span class="from-to-arrow"></span>
+                <span class="dropdown col-xs-3">
+                    <input type="text" id="endDate-datepicker" class="form-control" ng-model="Experience.EndDate" ng-change="DateChanged()"
+                           data-date-format="dd-MMM-yyyy" data-autoclose="true" data-todayhighlight="true" data-parsley-trigger="change" ng-hide="Experience.CurrentlyWorkHere"
+                           data-min-date="{{Experience.StartDate}}" data-max-date="{{today}}" placeholder="{{'End Date'|translate}}" bs-datepicker
+                           data-parsley-group="block3">
+                    <span class="col-xs-12">
+                        <input class="float-dir" type="checkbox" name="CurrentlyWorkHere" ng-model="Experience.CurrentlyWorkHere" ng-checked="CurrentlyWorkHereCheck()" />
+                        <label class="float-dir checkbox-label">{{'I currently work there'|translate}}</label>
+                    </span>
+                </span>
+
+            </div>
+            <div class="form-row">
+                <label class="input-label col-xs-10">{{'Job Description'|translate}}</label>
+                <textarea class="col-xs-10" data-parsley-maxlength="1000" id="DescriptionTxt" class="col-xs-12" ng-model="Experience.JobDescription" data-parsley-group="block3" />
+            </div>
+            <footer>
+                <button class="save-session" ng-click="SaveExperiance(UserProfiles)">{{'Save'|translate}}</button>
+                <button class="cancel-session" ng-click="CancelExperiance(UserProfiles)">{{'Cancel'|translate}}</button>
+                <a class="remove-entry" ng-click="RemoveExperience()" ng-show="Experience.Id">{{'Remove this entry'|translate}}</a>
+            </footer>
+        </div>
+    </div>
+</fieldset>

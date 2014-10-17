@@ -1,0 +1,22 @@
+﻿<!-- content -->
+<form class="col-xs-12 profile-view" id="userProfileForm" data-parsley-validate>
+    <!-- My Profile -->
+    <profile-head userprofile="UserProfiles" block="1"></profile-head>
+    <div class="user-details centered-item">
+        <!-- About Me -->
+        <about-me block="2"></about-me>
+
+        <!-- Experience -->
+        <profile-experiance block="3"></profile-experiance>
+
+        <!-- Interests -->
+        <profile-intersets input-data="AutoCompleteData" output-data="Interests" userprofile="UserProfiles"></profile-intersets>
+        
+        <!-- Find Me -->
+        <find-me></find-me>
+        
+        <!-- Personal Details -->
+        <personal-details></personal-details>
+    </div>
+</form>
+<!--/content -->

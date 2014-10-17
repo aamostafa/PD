@@ -1,0 +1,110 @@
+﻿@{
+    Layout = null;
+}
+
+<div class="col-xs-12 centered-cont">
+    <h1 class="col-xs-12 course-page-title">{{Course.Name}}</h1>
+
+
+    <!-- left col -->
+    <aside class="col-xs-4" cg-busy="getCourseByIdPromise">
+        <div class="cors-dtls-smry-cntnr">
+            <span class="course-ribbon" ng-show="Course.IsFacetoFace">
+                <img src="~/Content/common/images/ribbon-sprite.png" title="Face to face course" /></span>
+            <div class="course-data">
+                <h2 ng-hide="Course.IsFacetoFace">{{"Online Course"|translate}}
+                </h2>
+                <h2 ng-show="Course.IsFacetoFace">{{"Face to Face Course"|translate}}
+                </h2>
+                <time class="course-time">{{Course.StartDate | date:"dd-MMM-yyyy"}}
+                </time>
+                <label class="course-durtion">
+                    2 weeks
+                </label>
+                <label class="course-usrs" ng-show="Course.IsFacetoFace">
+                    {{availableSeats}} {{"seats available"|translate}} 
+                </label>
+                <dl class="col-xs-12 course-metadata">
+                    <dt class="col-xs-4 clear">{{"Section"|translate}}:
+                    </dt>
+                    <dd class="col-xs-8">{{Course.Category.CategorySection.Name}}
+                    </dd>
+                    <dt class="col-xs-4 clear">{{"Category"|translate}}:
+                    </dt>
+                    <dd class="col-xs-8">{{Course.Category.Name}}
+                    </dd>
+                </dl>
+                <div ng-hide="Course.IsFacetoFace">
+                    <button class="btn-default details-enroll-btn" type="button" ng-click="EnrollCourse(Course)" ng-disabled="Course.disable" ng-hide="Course.enroll">{{'Enroll'|translate}}</button>
+                    <button class="btn-default details-enroll-btn" type="button" ng-click="UnEnrollCourse(Course)" ng-disabled="Course.disable" ng-show="Course.enroll || Course.isApproved">{{'Un-Enroll'|translate}}</button>
+                    @if (User.IsInRole("Administrator") || User.IsInRole("Mentor"))
+                    {
+                        <button class="btn-default details-enroll-btn"  type="button" ng-click="PushCourses();showPushPopup()">
+                            {{"Assign To"|translate}}..
+                        </button>
+
+                        <push-courses courses-to-push="PushedCourses"></push-courses>
+                    }
+                </div>
+                <div ng-show="Course.IsFacetoFace">
+                    <button class="btn-default" type="button" ng-click="RegisterCourse(Course)"
+                        ng-disabled="Course.isReserved" ng-hide="Course.isRequested">
+                        {{'Register'|translate}}
+                    </button>
+
+                    <button id="A2" role="button" class="btn-start session-completed"
+                        ng-show="Course.isRequested">
+                        {{'Pending Approval'|translate}}
+                    </button>
+
+                </div>
+            </div>
+            <instructors model="Course.Instructors" ng-show="instructorFlag"></instructors>
+        </div>
+    </aside>
+
+    <!-- /left col -->
+    <!-- right col -->
+    <article class="col-xs-8">
+        <!--course details -->
+        <!--course summery section -->
+        <section class="col-xs-12 course-summery" cg-busy="getCourseByIdPromise">
+            <div class="col-xs-12 course-summery-bg">
+                <img err-big
+                    ng-src="{{Course.ImageUrl}}" />
+                <p class="col-xs-6 course-summery-info">
+                    {{Course.Description}}
+                </p>
+            </div>
+        </section>
+        <!--/course summery section -->
+        <!--course details section -->
+        <section class="col-xs-12 course-details-info" cg-busy="getCourseByIdPromise">
+            <!-- Nav tabs -->
+            <tabset>
+                <tab heading="{{'Overview'|translate}}" id="OverviewTab">
+                    <div model="Course" id="OverviewContent" courseoverview></div>
+                </tab>
+                <tab heading="{{'Course Schedule'|translate}}" ng-if="Course.enroll">
+                    <div courseschedule course="Course"></div>
+                </tab>
+                <tab heading="{{'Competencies'|translate}}">
+                    <div id="CompetenciesTree" class="courseDetailsCompetenciestree" model="CompetenciesTree" ng-show="Course.Competencies"></div>
+                    <div class="no-result-msg" runat="server" id="divltrCompetenciesNoItems" ng-hide="Course.Competencies">
+                        <h4>There are no competencies for this course</h4>
+                    </div>
+                </tab>
+                <tab heading="{{'FAQ'|translate}}">
+                    <div coursefaqs model="Course.FAQs"></div>
+                    <div class="no-result-msg" runat="server" id="divFAQNoItems" ng-hide="Course.FAQs">
+                        <h4>There are no FAQ's to be displayed</h4>
+                    </div>
+                </tab>
+            </tabset>
+
+        </section>
+        <!--/course details section -->
+        <!--/course details -->
+    </article>
+    <!-- /right col -->
+</div>

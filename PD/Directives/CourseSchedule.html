@@ -1,0 +1,41 @@
+﻿<ul class="col-xs-6">
+    <li class="col-xs-12 progress-section" ng-repeat="Session in Sessions" ng-show="Session.isPublished">
+        <header class="session-head" ng-class="{expanded : Session.show == true}" ng-click="toogleSession(Session)">
+            <h3 ng-class="{ellipsis : sessionTrim == true}">{{Session.Name}}</h3>
+            <time class="publishing-date">{{'Published'|translate}} {{Session.PublishedDate|date:"dd-MMM-yyyy"}}</time>
+            <time class="publishing-date col-xs-12">{{'Start Date'|translate}} 18-Sep-2014</time>
+            <time class="publishing-date col-xs-12">{{'End Date'|translate}} 18-Nov-2014</time>
+        </header>
+        <div class="session-details" ng-show="Session.show">
+            <h4 ng-show="Session.Objectives">{{'Objectives'|translate}}</h4>
+            <p>{{Session.Objectives}}</p>
+            <div class="col-xs-12 no-padding" ng-show="Session.markAsCompleted || Session.Completed">
+                <h4 ng-show="Session.Materials.length > 0">{{'Content'|translate}}</h4>
+                <ul class="session-materials">
+                    <li ng-repeat="material in Session.Materials">
+                        <img class="material-icon" /><a ng-href="{{material.Url}}">{{material.Name}}</a>
+                    </li>
+                </ul>
+            </div>
+            <footer>
+                <button id="btnStart" role="button" class="btn-start mark-complete"
+                    ng-click="CompleteSession(Session)"
+                    ng-show="Session.markAsCompleted">
+                    {{'Mark as Complete'|translate}}
+                </button>
+
+                <button id="A1" role="button" class="btn-start"
+                    ng-click="StartSession(Session)"
+                    ng-show="Session.StartBtn">
+                    {{'Start'|translate}}
+                </button>
+
+                <button id="A2" role="button" class="btn-start session-completed"
+                    ng-click="" ng-show="Session.Completed">
+                    {{'Completed'|translate}}
+                </button>
+            </footer>
+        </div>
+
+    </li>
+</ul>

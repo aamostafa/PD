@@ -1,0 +1,7 @@
+﻿<span class="col-xs-12 img-picker-cont">
+    <input type="button" class="image-picker" value="Change Image" />
+    <input name="materialUrl" class="col-xs-12 hidden" ng-model-instant=""
+           onchange="angular.element(this).scope().setFiles(this);"
+           accept={{accept}}
+           type="file" />
+</span>

@@ -1,0 +1,99 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <link rel="shortcut icon" href="../../assets/ico/favicon.ico" />
+    <title>TPD - My Profile</title>
+    <link rel="stylesheet" href="css/normalize.css" type="text/css" />
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" />
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" href="css/layout.css" type="text/css" />
+    <link rel="stylesheet" href="css/theme.css" type="text/css" />
+</head>
+<body>
+	<!-- Nav Buttons -->
+	<div class="form-row nav-btn-cont">
+		<input type="button" class="admin-def-btn btnNext" text="Next"/>
+		<input type="button" class="admin-def-btn btnPrevious" text="Previous"/>
+	</div>
+
+    
+		
+<!-- 			<script type="text/javascript">
+
+				function handleFiles(files) {
+					if (typeof FileReader !== "undefined") {
+						var FileMaxSize = 262144000
+						var size = files[0].size;
+						if (size > FileMaxSize) {
+							$('[id *= FileSizeValidationLbl]').css("display", "inline");
+							$('[id *= Validationhdn]').val("false");
+						}
+						else {
+							$('[id *= FileSizeValidationLbl]').css("display", "none");
+							$('[id *= Validationhdn]').val("true");
+							$('[id *= FileContentHdn]').val(files[0]);
+						}
+					}
+				}
+
+				function ValidateSize() {
+					if ($('[id *= materialsUpload]').val() != "") {
+						$('[id *= FileRequiredValidationLbl]').css("display", "none");
+						if ($('[id *= Validationhdn]').val() == "false")
+							return false;
+						else
+							return true;
+					}
+					else {
+						$('[id *= FileRequiredValidationLbl]').css("display", "inline");
+						return false;
+					}
+
+				}
+
+				function ValidatePublishDate(source, arguments) {
+					var startform = $('[id *= StartDateHdn]').val().split("/");
+					var startDate = new Date(startform[2], startform[1] - 1, startform[0]);
+					var endform = $('[id *= EndDateHdn]').val().split("/");
+					var endDate = new Date(endform[2], endform[1] - 1, endform[0]);
+					var selectform = $('[id *= dtPublishingDate]').val().split("/");
+					var selectedDate = new Date(selectform[2], selectform[1] - 1, selectform[0]);
+					if (selectedDate < startDate || selectedDate > endDate)
+						arguments.IsValid = false;
+					else
+						arguments.IsValid = true;
+
+				}
+
+				//$(document).ready(function () {
+				//    $('#divNewSession').click(function (e) {
+				//        $('.session-form-header').show();
+				//        //$('#SessionForm').show();
+				//        $('[id *= SessionForm]').show();
+				//    });
+				//})
+				function DivClicked() {
+					var btnHidden = $('#<%= btnHidden.ClientID %>');
+					if (btnHidden != null) {
+						btnHidden.click();
+					}
+				}
+
+
+			</script>
+ -->			
+
+  
+
+		
+		
+			
+			<!-- Note that when the user reaches the FAQ page the next button should be changed into a publish button like this one --> 
+			<input type="button" class="pd-btn publish-btn" value="Next"/>
+</body>
+</html>

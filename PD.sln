@@ -1,0 +1,70 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PD.Web", "PD\PD.Web.csproj", "{2EDE86C3-E655-4BD3-8013-14DDD708C9C1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{68EB2CD3-34C1-431A-A464-0593117409E2}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\packages.config = .nuget\packages.config
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PD.DataLayer", "PD.DataLayer\PD.DataLayer.csproj", "{00944343-F543-4E8B-9158-F6C0A0F9B9F6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PD.Contracts", "PD.Contracts\PD.Contracts.csproj", "{A6E8D67A-4A85-4EDE-85F3-97B98FEAA158}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PD.Services", "PD.Services\PD.Services.csproj", "{384E0BB6-B18C-488D-BBB5-56507B4D6098}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PD.DependencyInjection", "PD.DependencyMapper\PD.DependencyInjection.csproj", "{0DB9A417-1BFF-4E0D-BB00-A145E8BDC274}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 6
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://frzntfs2013-01:8080/tfs/default_collection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = PD\\PD.Web.csproj
+		SccProjectName1 = PD
+		SccLocalPath1 = PD
+		SccProjectUniqueName2 = PD.DataLayer\\PD.DataLayer.csproj
+		SccProjectName2 = PD.DataLayer
+		SccLocalPath2 = PD.DataLayer
+		SccProjectUniqueName3 = PD.Contracts\\PD.Contracts.csproj
+		SccProjectName3 = PD.Contracts
+		SccLocalPath3 = PD.Contracts
+		SccProjectUniqueName4 = PD.Services\\PD.Services.csproj
+		SccProjectName4 = PD.Services
+		SccLocalPath4 = PD.Services
+		SccProjectUniqueName5 = PD.DependencyMapper\\PD.DependencyInjection.csproj
+		SccProjectName5 = PD.DependencyMapper
+		SccLocalPath5 = PD.DependencyMapper
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2EDE86C3-E655-4BD3-8013-14DDD708C9C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2EDE86C3-E655-4BD3-8013-14DDD708C9C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2EDE86C3-E655-4BD3-8013-14DDD708C9C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2EDE86C3-E655-4BD3-8013-14DDD708C9C1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00944343-F543-4E8B-9158-F6C0A0F9B9F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00944343-F543-4E8B-9158-F6C0A0F9B9F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00944343-F543-4E8B-9158-F6C0A0F9B9F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00944343-F543-4E8B-9158-F6C0A0F9B9F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A6E8D67A-4A85-4EDE-85F3-97B98FEAA158}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6E8D67A-4A85-4EDE-85F3-97B98FEAA158}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6E8D67A-4A85-4EDE-85F3-97B98FEAA158}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6E8D67A-4A85-4EDE-85F3-97B98FEAA158}.Release|Any CPU.Build.0 = Release|Any CPU
+		{384E0BB6-B18C-488D-BBB5-56507B4D6098}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{384E0BB6-B18C-488D-BBB5-56507B4D6098}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{384E0BB6-B18C-488D-BBB5-56507B4D6098}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{384E0BB6-B18C-488D-BBB5-56507B4D6098}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0DB9A417-1BFF-4E0D-BB00-A145E8BDC274}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0DB9A417-1BFF-4E0D-BB00-A145E8BDC274}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0DB9A417-1BFF-4E0D-BB00-A145E8BDC274}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0DB9A417-1BFF-4E0D-BB00-A145E8BDC274}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

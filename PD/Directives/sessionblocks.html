@@ -1,0 +1,23 @@
+﻿<li class="form-row session-repeater">
+    <label id="lblSessionName" class="input-label col-xs-12"></label>
+    <div class="form-row publish-date" >
+        <span>Published : </span>
+        <label id="lblPublishingDate">{{NewSession.publishedDate}}</label>
+    </div>
+    <div class="form-row session-obj">
+        <label id="lblObjectives" class="col-xs-12"></label>
+    </div>
+    <div class="form-row content-container">
+        <span class="session-content-lbl col-xs-2">SessionContent</span>
+        <ul class="session-material col-xs-10">
+            <li class="material-row" ng-repeat="{{}}">
+                <img alt="Material icon" src='' class="material-icon" />
+                <a id="SessionMaterialURLLnk">{{}}</a>
+            </li>
+        </ul>
+    </div>
+    <span class="edit-container">
+        <input type="button" id="btnEditSession" class="edit-btn edit-session-btn" value="Edit" />
+        <input type="button" class="delete-btn" id="btnDeleteSession" value="Delete" />
+    </span>
+</li>

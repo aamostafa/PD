@@ -1,0 +1,50 @@
+﻿<fieldset class="profile-social">
+    <legend class="findme">{{'Find Me here'|translate}}</legend>
+    <div class="findme-form" ng-show="findMeEditMode">
+        <div class="edit-mood-cont">
+            <div class="form-row">
+                <label class="input-label fba-bg col-xs-2" title="https://facebook.com/">Facebook</label>
+                <div class="col-xs-6">
+                    <input type="text" class="col-xs-12" ng-model="facebookUrl" />
+                </div>
+            </div>
+            <div class="form-row">
+                <label class="input-label lnkdn-bg col-xs-2" title="https://linkedin.com/in/">Linked in</label>
+                <div class="col-xs-6">
+                    <input type="text" class="col-xs-12" ng-model="linkedInURL" />
+                </div>
+            </div>
+            <div class="form-row">
+                <label class="input-label twt-bg col-xs-2" title="https://twitter.com/">Twitter</label>
+                <div class="col-xs-6">
+                    <input type="text" class="col-xs-12" ng-model="twitterURl" />
+                </div>
+            </div>
+            <div class="form-row">
+                <label class="input-label gglp-bg col-xs-2" title="https://plus.google.com/">Google+</label>
+                <div class="col-xs-6">
+                    <input type="text" class="col-xs-12" ng-model="googleURl" />
+                </div>
+            </div>
+            <footer>
+                <button class="save-session" ng-click="SaveFindMe(UserProfiles)">{{'Save'|translate}}</button>
+                <button class="cancel-session" ng-click="CancelFindMe(UserProfiles)">{{'Cancel'|translate}}</button>
+            </footer>
+        </div>
+
+    </div>
+
+    <div ng-hide="findMeEditMode">
+        <button class="edit-btn" ng-hide="socailMediaEmpty" ng-click="EditFindMe()"></button>
+        <ul>
+            <li class="fba" ng-show="UserProfiles.FacebookUrl != 'null'"><a target="_blank" ng-href="https://facebook.com/{{UserProfiles.FacebookUrl}}" ng-show="UserProfiles.FacebookUrl"></a></li>
+            <li class="lnkdn" ng-show="UserProfiles.LinkedInUrl != 'null'"><a target="_blank" ng-href="https://linkedin.com/in/{{UserProfiles.LinkedInUrl}}" ng-show="UserProfiles.LinkedInUrl"></a></li>
+            <li class="twt" ng-show="UserProfiles.TwitterUrl != 'null'"><a target="_blank" ng-href="https://twitter.com/{{UserProfiles.TwitterUrl}}" ng-show="UserProfiles.TwitterUrl"></a></li>
+            <li class="gglp" ng-show="UserProfiles.GoogleUrl"><a target="_blank" ng-href="https://plus.google.com/{{UserProfiles.GoogleUrl}}" ng-show="UserProfiles.GoogleUrl"></a></li>
+        </ul>
+        <div id="divNoData" class="div-no-data" ng-show="socailMediaEmpty">
+            <span class="col-xs-12">{{'No Data Inserted'|translate}}</span>
+            <a ng-click="EditFindMe()">{{'Add Your Social Media Links'|translate}}</a>
+        </div>
+    </div>
+</fieldset>

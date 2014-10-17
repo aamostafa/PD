@@ -1,0 +1,129 @@
+<!-- content -->
+<form class="col-xs-12">
+    <!-- My Profile -->
+    <fieldset>
+        <legend>{{'My Profile'|translate}}</legend>
+        <div class="profile-img-cont">
+            <img ng-src="{{UserProfiles.ImageUrl != NULL && UserProfiles.ImageUrl || '../content/en-us/images/user-default.png'}}" alt="{{'Profile Image'|translate}}" />
+        </div>
+        <div class="col-xs-9">
+            <span class="col-xs-12">{{ImageHintLabel}}</span>
+            <span class="col-xs-12">
+                <file-upload url="UserProfiles.ImageUrl" accept='image/*'></file-upload>
+            </span>
+        </div>
+        <button class="save-session"></button>
+        <button class="cancel-session"></button>
+    </fieldset>
+    <!-- About Me -->
+    <fieldset>
+        <legend>{{'About Me'|translate}}</legend>
+        <div class="edit-mood-cont">
+            <textarea class="col-xs-12"></textarea>
+            <footer>
+                <button class="save-session"></button>
+                <button class="cancel-session"></button>
+            </footer>
+        </div>
+    </fieldset>
+    <!-- Experience -->
+    <fieldset>
+        <legend>{{'Experience'|translate}}</legend>
+        <span class="Firm-logo">
+            <img /></span>
+        <div class="edit-mood-cont">
+            <div class="form-row multi-field-row">
+                <div class="col-xs-3">
+                    <label class="input-label col-xs-12">{{'Firm name'|translate}}<span class="astrisk">*</span></label>
+                    <input type="text" />
+                </div>
+                <div class="col-xs-3">
+                    <label class="input-label col-xs-12">{{'Job Title'|translate}}<span class="astrisk">*</span></label>
+                    <input type="text" />
+                </div>
+            </div>
+            <div class="form-row">
+                <label class="input-label col-xs-12">{{'Location'|translate}}</label>
+                <input type="text" class="col-xs-3" />
+            </div>
+            <div class="form-row multi-field-row">
+                <div class="col-xs-3">
+                    <label class="input-label col-xs-12">{{'Time Period'|translate}}<span class="astrisk">*</span></label>
+                    <input type="text" />
+                </div>
+                <div class="col-xs-3">
+                    <label class="input-label col-xs-12"></label>
+                    <input type="text" class="col-xs-12" />
+                    <input type="checkbox" value="I currently work there" />
+                </div>
+            </div>
+            <div class="form-row">
+                <label class="input-label col-xs-12">{{'Location'|translate}}</label>
+                <textarea class="col-xs-12" />
+            </div>
+            <footer>
+                <button class="save-session"></button>
+                <button class="cancel-session"></button>
+                <a class="remove-entry">{{'Remove this entry'|translate}}</a>
+            </footer>
+        </div>
+    </fieldset>
+    <!-- Interests -->
+    <fieldset>
+        <legend>{{'Interests'|translate}}</legend>
+        <div class="form-row col-xs-12 edit-mood-cont">
+            <span class="col-xs-12">{{'What are your areas of interest?'|translate}}</span>
+            <input type="text" class="col-xs-8" ng-model="UserProfiles.Interests" />
+        </div>
+    </fieldset>
+    <!-- Find Me -->
+    <fieldset class="user-social-media">
+        <legend>{{'Find Me here'|translate}}</legend>
+        <div class="edit-mood-cont">
+            <div class="form-row">
+                <label class="input-label lnkdn col-xs-2">Linked in</label>
+                <input type="text" class="col-xs-6" ng-model="UserProfiles.LinkedInUrl" />
+            </div>
+            <div class="form-row">
+                <label class="input-label gglp col-xs-2">Google+</label>
+                <input type="text" class="col-xs-6" ng-model="UserProfiles.GoogleUrl" />
+            </div>
+            <div class="form-row">
+                <label class="input-label fba col-xs-2">Facebook</label>
+                <input type="text" class="col-xs-6" ng-model="UserProfiles.FacebookUrl" />
+            </div>
+            <div class="form-row">
+                <label class="input-label twt col-xs-2">Twitter</label>
+                <input type="text" class="col-xs-6" ng-model="UserProfiles.TwitterUrl" />
+            </div>
+        </div>
+    </fieldset>
+    <!-- Personal Details -->
+    <fieldset>
+        <legend>{{'Personal Details'|translate}}</legend>
+        <div class="form-row">
+            <span class="col-xs-2">
+                <label class="input-label">{{'Birthday'|translate}}</label>
+            </span>
+            <span class="col-xs-6">
+                <!--Place a DatePicker-->
+                <input type="text" class="col-xs-3" ng-model="birthYear" />
+                <span class="validation-msg col-xs-12"></span>
+            </span>
+        </div>
+        <div class="form-row">
+            <span class="col-xs-2">
+                <label class="input-label">{{'Gender'|translate}}</label>
+            </span>
+            <span class="col-xs-6">
+                <label for="male">{{'Male'|translate}}</label>
+                <input type="radio" name="gender" id="male" value="{{'Male'|translate}}" ng-model="UserProfiles.Gender">
+                <label for="female">{{'Female'|translate}}</label>
+                <input type="radio" name="gender" id="female" value="{{'Female'|translate}}" ng-model="UserProfiles.Gender">
+            </span>
+        </div>
+    </fieldset>
+    <input type="button" value="{{'Save'|translate}}" ng-click="saveChanges()" />
+</form>
+<!--/content -->
+

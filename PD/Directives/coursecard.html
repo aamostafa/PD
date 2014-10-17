@@ -1,0 +1,55 @@
+﻿<div class="course-card-wrapper">
+    <span class="pd-checkbox" ng-class="{'item-selected' : course.selected}" ng-show="showpushselect"><input class="listing-checkbox" type="checkbox" ng-model="course.selected" ng-change="pushcourse(course)" /></span>
+    <a class="course-ribbon" ng-href="#/CourseDetails/{{course.ID}}">
+        <img src="../Content/common/images/ribbon-sprite.png" ng-show="course.IsFacetoFace" class="face2face-course" title="Face to face course" />
+        <img src="../Content/common/images/ribbon-sprite.png" ng-hide="course.IsFacetoFace" class="online-course" title="Online course" />
+    </a>
+    <div class="course-img">
+        <img
+            err-src
+            ng-src="{{course.ImageUrl}}" />
+    </div>
+    <div class="block-details inside-block-details">
+        <h4 >
+            <a class="col-xs-12 course-name" ng-href="#/CourseDetails/{{course.ID}}">{{course.Name}}
+            </a>
+        </h4>
+        
+        <dl class="col-xs-12 course-instructors">
+            <dt ng-show="InstructorFlag">{{'By'|translate}} :</dt>
+            <dd class="course-owner">{{course.Instructors.join(', ')}}</dd>
+            <!-- ng-repeat : instructor in course.Instructors track by $index -->
+            {{instructor}}
+            <!-- /ng-repeat -->
+        </dl>
+        <div class="publishing-date">
+            <span>{{"Start Date"|translate}}: <time>{{course.StartDate|date:"dd-MMM-yyyy"}}</time></span>
+            <br /><span>{{"End Date"|translate}}: <time>{{course.EndDate|date:"dd-MMM-yyyy"}}</time></span>
+        </div>
+        <p class="col-xs-12  custom-course-item-details">{{course.Description}}</p>
+        <footer class="favorite-bar-hover">
+            <div ng-hide="course.IsFacetoFace">
+                <button class="btn-default" type="button" ng-click="EnrollCourse(course)" ng-disabled="course.disable"
+                        ng-hide="course.isEnrolled">
+                    {{'Enroll'|translate}}
+                </button>
+                <button class="btn-default" type="button" ng-click="UnEnrollCourse(course)"
+                        ng-disabled="course.disable" ng-show="course.isEnrolled">
+                    {{'Un-Enroll'|translate}}
+                </button>
+            </div>
+            <div ng-show="course.IsFacetoFace">
+                <button class="btn-default" type="button" ng-click="RegisterCourse(course)"
+                        ng-disabled="course.isReserved"  ng-hide="course.isRequested">
+                    {{'Register'|translate}}
+                </button>
+
+                <button id="A2" role="button" class="btn-start session-completed"
+                        ng-show="course.isRequested" >
+                    {{'Pending Approval'|translate}}
+                </button>
+            </div>
+        </footer>
+
+    </div>
+</div>

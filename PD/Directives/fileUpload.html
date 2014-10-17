@@ -1,0 +1,13 @@
+﻿<span class="col-xs-12 img-picker-cont">
+    <input type="button" class="image-picker" value="{{'Change Image'|translate}}" />
+    <input name="materialUrl" class="col-xs-12" ng-model-instant=""
+           onchange="angular.element(this).scope().setFiles(this);"
+           accept={{accept}}
+           type="file" />
+</span>
+<!--<div ng-show="progressVisible">
+    <div class="percent">{{progress}}%</div>
+    <div class="progress-bar">
+        <div class="uploaded" ng-style="{'width': progress+'%'}"></div>
+    </div>
+</div>-->

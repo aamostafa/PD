@@ -1,0 +1,24 @@
+﻿<fieldset>
+    <legend class="about">{{'About Me'|translate}}</legend>
+    <div id="aboutMeEditMode" ng-show="aboutMeEditMode">
+        <div class="edit-mood-cont form-row">
+            <textarea class="col-xs-12" ng-model="aboutMe"
+                      data-parsley-group="block2"
+                      data-parsley-maxlength="1000"
+                      data-parsley-trigger="keyup"
+                      data-parsley-maxlength-message="{{'please enter text less than 1000 character'|translate}}"></textarea>
+            <footer>
+                <button class="save-session" ng-click="SaveAboutMe(UserProfiles)">{{'Save'|translate}}</button>
+                <button class="cancel-session" ng-click="CancelAboutMe(UserProfiles)">{{'Cancel'|translate}}</button>
+            </footer>
+        </div>
+    </div>
+    <div id="aboutMeViewMode" ng-hide="aboutMeEditMode">
+        <button class="edit-btn" ng-click="EditAboutMe()" ng-hide="UserProfiles.About==null || UserProfiles.About==''" id="btnEditAboutMe"></button>
+        <p>{{UserProfiles.About}}</p>
+    </div>
+    <div id="divFirstTimeAboutMe" class="div-no-data" ng-hide="UserProfiles.About||aboutMeEditMode">
+        <span class="col-xs-12">{{'No Data Inserted'|translate}}</span>
+        <a ng-click="EditAboutMe()">{{'Add Your Biography'|translate}}</a>
+    </div>
+</fieldset>

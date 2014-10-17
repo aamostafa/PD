@@ -1,0 +1,17 @@
+﻿@model dynamic
+@{
+    ViewBag.Title = "Pending Confirmation";
+}
+<br/>
+<div class="alert alert-block"> 
+    <h5>Just one more step for registration!</h5>
+    Please activate your account via the link in the email we just sent to "@Model.Email"
+</div>
+
+<small>
+    <b>Note :</b>
+    <ul>
+        <li>Add @Model.From in white-list or <a href="@Model.SiteUrl">@Model.SiteUrl</a> in allowed domain.</li>
+        <li>If you don't see our mail, please check your spam folder also.</li>
+    </ul>
+</small>

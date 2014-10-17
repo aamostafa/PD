@@ -1,0 +1,20 @@
+﻿@using System.Configuration
+@model bool
+@{
+    ViewBag.Title = "PendingConfirmation";
+}
+<br/>
+@if(@Model ==true )
+{
+    <div class="alert alert-success">
+        <h5>Congratulations!Your registration was successful.</h5>
+        With your user name and password, you can now login to Gumtree anytime.
+    </div>
+}
+@if (@Model == false)
+{
+    <div class="alert alert-error">
+        <h5>Your registration!</h5>
+        The link you have followed is incorrect. Please make sure that the link is complete.
+    </div>
+}

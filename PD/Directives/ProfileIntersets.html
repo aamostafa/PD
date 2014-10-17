@@ -1,0 +1,18 @@
+﻿<fieldset>
+    <legend class="interests">{{'Interests'|translate}}</legend>
+    <div id="Intersts" class="edit-mood-cont col-xs-12" ng-show="EditMode">
+        <input type="text" id="txtIntersets" />
+        <button class="save-session" ng-click="SaveInetersets()">{{'Save'|translate}}</button>
+        <button class="cancel-session" ng-click="CancelInetersets()">{{'Cancel'|translate}}</button>
+    </div>
+    <div id="InterstsViewMode" ng-hide="EditMode">
+        <input type="button"  class="edit-btn"  ng-hide="intersets==null || intersets.length==0" ng-click="DisplayEditMode()" />
+        <ul class="interests-list">
+            <li ng-repeat="interest in intersets" ng-click="goToCategoryPage(interest.Id)"><a>{{interest.Name}}</a></li>
+        </ul>
+    </div>
+    <div id="divNoData" class="div-no-data" ng-hide="intersets.length>0 ||EditMode">
+        <span class="col-xs-12">{{'No Data Inserted'|translate}}</span>
+        <a ng-click="DisplayEditMode()">{{'Add Your Interests'|translate}}</a>
+    </div>
+</fieldset>

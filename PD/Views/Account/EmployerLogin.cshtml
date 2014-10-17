@@ -1,0 +1,24 @@
+﻿@model PD.Contracts.Entities.LoginModel
+@{
+    ViewBag.Title = "EmployerLogin";
+    Layout = "~/Views/Shared/_EmployerLayout.cshtml";
+}
+@{
+    ViewBag.Title = "Employer Log in";
+}
+
+@{
+    Html.RenderPartial("_LoginPartialView",Model);
+}
+<section class="social" id="socialLoginForm">
+    <h2>Use another service to log in.</h2>
+    @Html.Action("ExternalLoginsList", new { ReturnUrl = ViewBag.ReturnUrl })
+</section>
+
+<p>
+    For Employers:    @Html.ActionLink("Register", "RegisterEmployer",new {role="Employer"}) if you don't have an account.
+    </p>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,59 @@
+﻿<div class="course-page-title dashboard-header">
+    <h1 class="centered-cont">{{'My Training Plan'|translate}}</h1>
+</div>
+
+<div cg-busy="dashboardPromise"></div>
+
+<div class="chart-wrapper" cg-busy="dashboardPromise" ng-hide="EmptyDashboard">
+    <figure class="hc-pie chart-pie" items="States"
+        on-selection-changed="onSelectionChanged(name)">
+    </figure>
+    <div id="chartDrillDown" class="chart-listing">
+        <h2 class="DrillDownHeader" ng-class="courseCSSClass">{{selectedStatus}}</h2>
+        <div class="chart-list-wrapper">
+            <ul id="DrillDownDetails" ng-repeat="course in selectedStatusCourses | orderBy:'StartDate' track by $index ">
+                <li class="course-item">
+                    <a class="col-xs-3" ng-href="#/CourseDetails/{{course.ID}}">
+                        <img err-src
+                            ng-src="{{course.ImageUrl}}" class="course-img" />
+                    </a>
+                    <div class="col-xs-9 course-listing-data">
+                        <h3 class="course-name">
+                            <a class="course-name" ng-href="#/CourseDetails/{{course.ID}}">{{course.Name}}
+                            </a>
+                        </h3>
+                        <div class="publishing-date">
+                            <span>{{"Start Date"|translate}}: <time>{{course.StartDate|date:"dd-MMM-yyyy"}}</time></span>
+                            <span class="dashed"> - </span>
+                            <span>{{"End Date"|translate}}: <time>{{course.EndDate|date:"dd-MMM-yyyy"}}</time></span>
+                        </div>
+                        <dl class="col-xs-12 course-instructors">
+                            <dt ng-show="course.Instructor">{{'By'|translate}}:</dt>
+                            <dd class="course-owner">{{course.Instructor}}</dd>
+                        </dl>
+                        <div class="remaining-session">
+                            <span>{{'Remaining Sessions'|translate}}</span>
+                            <span>{{course.RemainingSessions}}</span>
+                            <span>{{'of'|translate}}</span>
+                            <span>{{course.TotalSessions}}</span>
+                        </div>
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+    </div>
+</div>
+<p id="EmptyDashboardDiv" class="centered-cont" cg-busy="dashboardPromise" ng-show="EmptyDashboard">
+    {{'No_Courses_TrainingPlan'|translate}}
+    <a href="#/CoursesCatalog">{{'View_Courses' | translate }}</a>
+</p>
+<script>
+    //scroller
+    $('.chart-list-wrapper').slimScroll({
+        height: '360px',
+        color: '#b4b4b4',
+        alwaysVisible: true
+    });
+</script>

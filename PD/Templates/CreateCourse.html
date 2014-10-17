@@ -1,0 +1,478 @@
+﻿<div class="col-xs-12 course-page-title create-course-header">
+    <h1 class="centered-cont">{{"Create Course"|translate}}</h1>
+</div>
+<form name="createCourseForm" id="createCourseForm" data-parsley-validate>
+    <div class="centered-item">
+        <fieldset class="course-initials view-mood" ng-show="currentstep != '0'">
+            <span class="edit-container">
+                <input type="button" class="edit-btn" ng-show="!isEdit" ng-click="EditCourse(Course)" />
+                <input type="button" class="save-btn save-session" ng-show="isEdit" ng-click="SaveCourse(Course)" />
+            </span>
+            <div class="editable-text">
+                <div id="editCourseName" class="form-row session-name">
+                    <label class="course-name col-xs-12" ng-show="!isEdit">{{Course.Name}}</label>
+                    <label class="input-label col-xs-2" ng-show="isEdit">{{'Course Name'|translate}}<span class="astrisk" ng-show="isEdit">*</span></label>
+                    <div class="col-xs-6">
+                        <input name="courseName" id="editCourseNameTxt" type="text" ng-change="editCourseNameChange()" ng-show="isEdit" data-parsley-maxlength="100" data-parsley-trigger="keyup" class="col-xs-12" ng-model="Course.Name" data-parsley-group="block0" data-parsley-required-message="{{'Course Name is required'|translate}}" required />
+                        <label id="courseNameEditValidation" class="validation-msg" style="display: none">{{'Course name should be unique under the same category'|translate}}</label>
+                    </div>
+                </div>
+
+
+                <div class="form-row session-section">
+                    <label class="input-label col-xs-2">{{'Course Section'|translate}}<span class="astrisk" ng-show="isEdit">*</span></label>
+                    <label class="input-label" ng-show="!isEdit">{{Course.Category.CategorySection.Name}}</label>
+                    <div class="col-xs-6" ng-show="isEdit">
+                        <select class="col-xs-12"
+                                name="section"
+                                ng-model="SectionId"
+                                ng-options="c.Id as c.Name for c in Sections"
+                                ng-change="SelectSection()" data-parsley-group="block0" data-parsley-required-message="{{'Course Section is required'|translate}}" required>
+                            <option value="">{{'Select Section'|translate}}</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row session-category" ng-show="SectionId">
+                    <label class="input-label col-xs-2">{{'Course Category'|translate}}<span class="astrisk" ng-show="isEdit">*</span></label>
+                    <label class="input-label" ng-show="!isEdit">{{Course.Category.Name}}</label>
+                    <div class="col-xs-6" ng-show="isEdit">
+                        <select class="col-xs-12"
+                                name="categorySelect"
+                                ng-model="Course.CategoryId"
+                                ng-options="c.Id as c.Name for c in Categories" data-parsley-group="block0" data-parsley-required-message="{{'Course Cetegory is required.'|translate}}" required>
+                            <option value="">{{'Select Category'|translate}}</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <span class="edit-container">
+                <input type="button" class="edit-btn" ng-show="!isEdit" ng-click="EditCourse(Course)" />
+                <input type="button" class="save-btn save-session" ng-show="isEdit" value="Save" currentstep="0" ng-click="SaveCourse(Course)" />
+            </span>
+        </fieldset>
+
+        <nav ng-show="currentstep != '0'">
+            <ul id="WizardLinks">
+                <!--<li id="Course" changeblock block="0" currentstep="currentstep" ng-class="{ 'wizard-link-selected' : currentstep=='0' }">{{'Course'|translate}}</li>-->
+                <li id="CourseBasicInfo" changeblock block="1" currentstep="currentstep" ng-class="{ 'wizard-link-selected' : currentstep=='1' }">{{'Course Basic Info'|translate}}</li>
+                <li id="CourseSchedule" changeblock block="2" currentstep="currentstep" ng-class="{ 'wizard-link-selected' : currentstep=='2' }">{{'Course Schedule'|translate}}</li>
+                <li id="CourseDetails" changeblock block="3" currentstep="currentstep" ng-class="{ 'wizard-link-selected' : currentstep=='3' }">{{'Course Details'|translate}}</li>
+                <li id="CourseInstructor" changeblock block="4" currentstep="currentstep" ng-class="{ 'wizard-link-selected' : currentstep=='4' }">{{'Instructors'|translate}}</li>
+                <li id="CourseOutlines" changeblock block="5" currentstep="currentstep" ng-class="{ 'wizard-link-selected' : currentstep=='5' }">{{'Course Outlines'|translate}}</li>
+                <li id="CourseCompetencies" changeblock block="6" currentstep="currentstep" ng-class="{ 'wizard-link-selected' : currentstep=='6' }">{{'Course Competencies'|translate}}</li>
+                <li id="CourseFAQ" changeblock block="7" currentstep="currentstep" ng-class="{ 'wizard-link-selected' : currentstep=='7' }">{{'Course FAQs'|translate}}</li>
+            </ul>
+        </nav>
+
+        <div ng-switch="currentstep" class="create-course-main">
+            <div class="first block0 show" ng-switch-when="0">
+                <style>
+                    .create-course-main {
+                        width: 100%;
+                    }
+                </style>
+                <!-- Course Initiation -->
+                <fieldset class="course-initials">
+                    <div class="form-row">
+                        <label class="input-label col-xs-2" for="courseName">{{'Course Name'|translate}}<span class="astrisk">*</span></label>
+                        <div class="col-xs-6">
+                            <input name="courseName" id="courseName" type="text" ng-change="courseNameChange()" data-parsley-maxlength="100" data-parsley-trigger="keyup" class="col-xs-12" ng-model="Course.Name" data-parsley-group="block0" data-parsley-required-message="{{'Course Name is required'|translate}}" required />
+                            <label id="courseNameValidation" class="validation-msg" style="display: none">Course name should be unique under the same category</label>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <label class="input-label col-xs-2" for="section-dropdown">{{'Course Section'|translate}}<span class="astrisk">*</span></label>
+                        <div class="col-xs-6" cg-busy="getcatSections">
+                            <select class="col-xs-12" id="section-dropdown"
+                                    name="section"
+                                    ng-model="$parent.SectionId"
+                                    ng-options="c.Id as c.Name for c in Sections | orderBy: 'name'"
+                                    ng-change="SelectSection()" data-parsley-group="block0" data-parsley-required-message="{{'Course Section is required'|translate}}" required>
+                                <option value="">{{'Select Section'|translate}}</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row" ng-show="$parent.SectionId">
+                        <label class="input-label col-xs-2" for="category-dropdown">{{'Course Category'|translate}}<span class="astrisk">*</span></label>
+                        <div class="col-xs-6">
+                            <select class="col-xs-12" id="category-dropdown"
+                                    name="categorySelect"
+                                    ng-model="Course.CategoryId"
+                                    ng-options="c.Id as c.Name for c in Categories" data-parsley-group="block0" data-parsley-required-message="{{'Course Cetegory is required.'|translate}}" required>
+                                <option value="">{{'Select Category'|translate}}</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <label class="input-label col-xs-2">{{'Course Type'|translate}}<span class="astrisk">*</span></label>
+                        <div class="col-xs-6">
+                            <input type="radio" id="OnlineCourse" name="online" ng-model="Course.IsFacetoFace" ng-value="false" ng-change="IsFaceToFace(Course)"><label class="label-radio" for="OnlineCourse">{{'Online Course'|translate}} </label>
+                            <br />
+                            <input type="radio" id="Face2FaceCourse" name="faceToFace" ng-model="Course.IsFacetoFace" ng-value="true" ng-change="IsFaceToFace(Course)"><label class="label-radio" for="Face2FaceCourse">{{'Face to face Course'|translate}} </label>
+                            <br />
+                        </div>
+                    </div>
+                    <div class="form-row" ng-show="Course.IsFacetoFace">
+                        <label class="input-label col-xs-2">{{'Number of seats'|translate}}<span class="astrisk">*</span></label>
+                        <div class="col-xs-6">
+                            <input type="text" id="NumberOfSeatsTxt" onkeypress='return event.charCode >= 48 && event.charCode <= 57' data-parsley-group="block0" ng-model="Course.NumberOfSeats" data-parsley-maxlength="100" />
+                        </div>
+                    </div>
+
+                </fieldset>
+
+                <footer class="nav-btn-cont">
+                    <button class="btn admin-def-btn btnNext" changeblock block="1" currentstep="$parent.currentstep" course="Course">{{'Next'|translate}}</button>
+                </footer>
+            </div>
+            <div class="second block1 " ng-switch-when="1">
+                <!-- Course Basic Info -->
+                <fieldset class="course-info-basic session-module-bg">
+                    <legend>{{"Basic Info"|translate}}</legend>
+                    <div class="form-row upload-course-image">
+                        <label class="input-label col-xs-2">{{'Course Image'|translate}}</label>
+                        <div class="col-xs-10">
+                            <file-upload url="$parent.Course.ImageUrl" accept='image/*'></file-upload>
+                            <label id="ImgUploadValidation" class="validation-msg" style="display: none">{{'Invalid file, please upload an image'|translate}}</label>
+                            <div class="img-cont">
+                                <img create-src ng-src="{{$parent.Course.ImageUrl}}" />
+                            </div>
+                            <!--!= NULL && Course.ImageUrl || '../content/common/images/default-course-background.jpg'-->
+                            <label class="hint-msg">
+                                {{"Tip: Upload a clean, non-pixelated image that is minimum 725X330."|translate}}
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <label class="input-label col-xs-2" for="txtCourseBrief">{{'Course Brief'|translate}}<span class="astrisk">*</span></label>
+                        <div class="col-xs-10">
+                            <textarea name="txtCourseBrief" id="txtCourseBrief" data-parsley-maxlength="780" data-parsley-trigger="keyup" class="col-xs-12" ng-model="Course.Description" data-parsley-group="block1" data-parsley-required-message="{{'Course Brief is required.'|translate}}" required></textarea>
+                            <label class="hint-msg">{{"Please write a short description about the course."|translate}}</label>
+                        </div>
+                    </div>
+                </fieldset>
+                <footer class="nav-btn-cont">
+                    <button class="btn admin-def-btn btnNext" changeblock block="2" currentstep="$parent.currentstep">{{'Next'|translate}}</button>
+                    <button class="admin-def-btn btnPrevious" changeblock block="0" currentstep="$parent.currentstep">{{'Back'|translate}}</button>
+
+                </footer>
+            </div>
+            <div class="second block2 " ng-switch-when="2">
+                <!-- Course Schedule -->
+                <fieldset class="course-settings-schedule  session-module-bg">
+                    <legend>{{'Course Schedule'|translate}}</legend>
+                    <div class="form-group">
+                        <div class="form-row">
+                            <label class="input-label col-xs-2" for="startDate-datepicker"><i class="fa fa-calendar"></i><i class="fa fa-arrows-h"></i><i class="fa fa-calendar"></i>{{"Start Date"|translate}}<span class="astrisk">*</span></label>
+                            <div class="col-xs-10">
+                                <span class="dropdown col-xs-6">
+                                    <input type="text" id="startDate-datepicker" class="form-control" ng-model="Course.StartDate" ng-change="DateChanged()"
+                                        data-date-format="dd-MMM-yyyy" data-autoclose="true" data-data-today-highlight="true" data-min-date="{{today}}"
+                                           data-max-date="{{Course.EndDate}}" placeholder="{{'Start Date'|translate}}" data-parsley-trigger="change"
+                                           data-parsley-group="block2" data-parsley-required-message="{{'Start Date is required.'|translate}}" required
+                                           bs-datepicker>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <label class=" input-label col-xs-2" for="endDate-datepicker"><i class="fa fa-calendar"></i><i class="fa fa-arrows-h"></i><i class="fa fa-calendar"></i>{{"End Date"|translate}}<span class="astrisk">*</span></label>
+                            <div class="col-xs-10">
+                                <span class="dropdown col-xs-6">
+                                    <input type="text" id="endDate-datepicker" class="form-control" ng-model="Course.EndDate" ng-change="DateChanged()"
+                                           data-date-format="dd-MMM-yyyy" data-autoclose="true" data-todayhighlight="true" data-parsley-trigger="change"
+                                           data-min-date="{{Course.StartDate}}" placeholder="{{'End Date'|translate}}" bs-datepicker
+                                           data-parsley-group="block2" data-parsley-required-message="{{'End Date is required.'|translate}}" required>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="form-row" ng-show="Course.IsFacetoFace">
+                            <label class=" input-label col-xs-2">{{'Sessions Occur'|translate}}</label>
+                            <div class="col-xs-10">
+                                <span class="dropdown col-xs-6">
+                                    <select class="col-xs-12"
+                                        ng-model="Course.SessionsOccur"
+                                            ng-options="occ as occ for occ in SessionsOccurArr">
+                                        <option value="">{{'Select Sessions Occur'|translate}}</option>
+                                    </select>
+                                    <!--<select class="col-xs-12" id="Select1"
+                                        name="section"
+                                        ng-model="$parent.SectionId"
+                                        ng-options="c.Id as c.Name for c in Sections | orderBy: 'name'"
+                                        ng-change="SelectSection()" data-parsley-group="block0" data-parsley-required-message="{{'Course Section is required'|translate}}" required>
+                                        <option value="">{{'Select Section'|translate}}</option>
+                                    </select>-->
+                                </span>
+                            </div>
+                        </div>
+                        <div class="form-row" ng-show="Course.IsFacetoFace">
+                            <label class=" input-label col-xs-2" for="txtcourseLocation">{{'Location'|translate}}</label>
+                            <div class="col-xs-10">
+                                <input class="col-xs-6" type="text" id="txtcourseLocation" ng-model="Course.Location" data-parsley-group="block4" data-parsley-maxlength="255" />
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+                <footer class="nav-btn-cont">
+                    <button class="btn admin-def-btn btnNext" changeblock block="3" currentstep="$parent.currentstep">{{'Next'|translate}}</button>
+                    <button class="admin-def-btn btnPrevious" changeblock block="1" currentstep="$parent.currentstep">{{'Back'|translate}}</button>
+
+                </footer>
+            </div>
+            <div class="second block3 " ng-switch-when="3">
+                <!-- Course Details -->
+                <fieldset class="course-info-details  session-module-bg">
+                    <legend>{{'Course Details'|translate}}</legend>
+                    <div class="form-row">
+                        <label class="input-label col-xs-2" for="txtAboutCourse">{{'About The Course'|translate}}<span class="astrisk">*</span></label>
+                        <div class="col-xs-10">
+                            <textarea name="aboutCourse" id="txtAboutCourse" class="col-xs-12" ng-model="Course.Details" data-parsley-group="block3" data-parsley-required-message="{{'About the Course is required.'|translate}}" required></textarea>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <label class="input-label col-xs-2" for="txtTargetAudience">{{'Target Audience'|translate}}</label>
+                        <div class="col-xs-10">
+                            <textarea class="col-xs-12" id="txtTargetAudience" ng-model="Course.TargetAudience"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <label class="input-label col-xs-2" for="txtParticipants">{{"Participants Will"|translate}}</label>
+                        <div class="col-xs-10">
+                            <textarea class="col-xs-12" id="txtParticipants" ng-model="Course.Participants"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <label class="input-label col-xs-2" for="txtRequiredBackground">{{'Required Background'|translate}}</label>
+                        <div class="col-xs-10">
+                            <textarea class="col-xs-12" id="txtRequiredBackground" ng-model="Course.RequiredBackground"></textarea>
+
+                        </div>
+                    </div>
+                </fieldset>
+                <footer class="nav-btn-cont">
+                    <button class="btn admin-def-btn btnNext" changeblock block="4" currentstep="$parent.currentstep">{{'Next'|translate}}</button>
+                    <button class="admin-def-btn btnPrevious" changeblock block="2" currentstep="$parent.currentstep">{{'Back'|translate}}</button>
+
+                </footer>
+            </div>
+
+            <div class="second block4" ng-switch-when="4">
+                <!-- Course Instructors -->
+                <fieldset class="course-settings-instructor  session-module-bg">
+                    <legend>{{'Instructors'|translate}}</legend>
+                    <div class="form-row">
+                        <label class="input-label col-xs-2" for="txtcourseInstructor">{{'Instructor Name'|translate}}</label>
+                        <div class="col-xs-10">
+                            <input type="text" id="txtcourseInstructor" data-parsley-maxlength="100" data-parsley-group="block4" data-parsley-trigger="keyup" class="col-xs-6" ng-model="Course.Instructor"></input>
+                            <label class="hint-msg">{{'Multiple instructor names should be comma separated."ex. John Doe,Pam Taylor"'|translate}}</label>
+                        </div>
+                    </div>
+                </fieldset>
+                <footer class="nav-btn-cont">
+                    <button class="btn admin-def-btn btnNext" changeblock block="5" currentstep="$parent.currentstep">{{'Next'|translate}}</button>
+                    <button class="admin-def-btn btnPrevious" changeblock block="3" currentstep="$parent.currentstep">{{'Back'|translate}}</button>
+
+                </footer>
+            </div>
+            <div class="second block5 " ng-switch-when="5">
+                <!-- Course Content & Outline -->
+                <!--create-->
+                <fieldset class="course-settings-instructor session-module-bg">
+                    <legend>{{'Outline & Content'|translate}}</legend>
+                    <div id="divNewSession" ng-click="addNewSession()">
+                        <span class="add-new-btn">{{'Add New Session'|translate}}</span>
+                    </div>
+
+                    <div class="form-row session-form-header col-xs-12" style="display: none">
+                        <label class="input-label col-xs-2" for="sessionName">{{'Session Name'|translate}}<span class="astrisk">*</span></label>
+                        <div class="col-xs-6">
+                            <input name="sessionName" id="sessionName" type="text" class="col-xs-12" ng-model="$parent.Session.Name"
+                                   data-parsley-group="block5" data-ngx="hello world" data-parsley-required-message="{{'Session Name is required.'|translate}}" required ng-change="SessionNameChange()" />
+                            <label id="validateUniqueSessionName" class="validation-msg" ng-show="UniqueSessionName">Session name should be unique</label>
+                        </div>
+                        <span class="col-xs-4">
+                            <input id="CancelSessionBtn" type="button" class="cancel-session" value="{{'Cancel'|translate}}" />
+                            <input id="AddSessionBtn" type="button" class="save-session" value="{{'Save'|translate}}" ng-click="AddSession()" />
+                        </span>
+                    </div>
+                    <div id="SessionForm" class="col-xs-12" style="display: none">
+                        <div class="form-row">
+                            <label class="input-label col-xs-2" for="SessionPublishingDate">{{'Publishing Date'|translate}}<span class="astrisk">*</span></label>
+                            <div class="col-xs-6">
+                                <input type="text" id="SessionPublishingDate" class="form-control" ng-model="$parent.Session.PublishedDate"
+                                       data-date-format="dd-MMM-yyyy" autoclose="true" todayhighlight="true"
+                                       data-min-date="{{Course.StartDate}}" data-max-date="{{Course.EndDate}}" placeholder="{{'Publishing Date'|translate}}" bs-datepicker
+                                       data-parsley-group="block5" data-parsley-required-message="{{'Publish date is required.'|translate}}" required />
+                                <small class="validation-msg col-xs-12" ng-show="createCourseForm.publishedDate.$error.required">{{'Publishing Date is required'|translate}}</small>
+                            </div>
+                        </div>
+
+                        <div class="form-row" ng-if="Course.IsFacetoFace">
+                            <label class="input-label col-xs-2" for="SessionStartDate">{{'Start Date'|translate}}<span class="astrisk">*</span></label>
+                            <div class="col-xs-6">
+                                <input type="text" id="SessionStartDate" class="form-control" ng-model="$parent.Session.StartDate"
+                                       data-date-format="dd-MMM-yyyy" autoclose="true" todayhighlight="true"
+                                       data-min-date="{{Course.StartDate}}" data-max-date="{{Course.EndDate}}" placeholder="{{'Start Date'|translate}}" bs-datepicker
+                                       data-parsley-group="block5" data-parsley-required-message="{{'Start date is required.'|translate}}" required />
+                                <small class="validation-msg col-xs-12" ng-show="createCourseForm.publishedDate.$error.required">{{'Start Date is required'|translate}}</small>
+                            </div>
+                        </div>
+                        <div class="form-row multi-field-row" ng-if="Course.IsFacetoFace">
+                            <div class="col-xs-4 first-set">
+                                <label class="input-label col-xs-6" for="SessionStartTime">{{'Session Time'|translate}}<span class="astrisk">*</span></label>
+                            <div class="col-xs-6">
+                                    {{$parent.Session.StartDate}}
+                                    <timepicker ng-model="$parent.Session.StartDate" ng-change="StartTimechanged()" hour-step="hstep" minute-step="mstep" show-meridian="true"></timepicker>
+                                <!--<input type="text" dn-timepicker="h:mm a" min-time="00:00" max-time="23:59" step="15" ng-model="timepicker.model" />-->
+                            </div>
+                        </div>
+                            <div class="col-xs-4">
+                            <label class="input-label col-xs-2" for="SessionEndTime">{{'To'|translate}}<span class="astrisk">*</span></label>
+                            <div class="col-xs-6">
+
+
+                                <timepicker id="endTime" ng-model="$parent.Session.EndDateTime" ng-change="EndTimechanged()" hour-step="hstep" minute-step="mstep" show-meridian="true"></timepicker>
+                                <label id="TimerValidation" class="validation-msg" ng-show="TimerValidation">{{'Start time should be greater than end time.'|translate}}</label>
+                            </div>
+                        </div>
+                        </div>
+
+                        <div class="form-row">
+                            <label class="input-label col-xs-2" for="sessionObjective">{{'Objectives'|translate}}</label>
+                            <div class="col-xs-10">
+                                <textarea id="sessionObjective" class="col-xs-12" ng-model="$parent.Session.Objectives"></textarea>
+                            </div>
+                        </div>
+                        <!--add material-->
+                        <div id="addNewContent" ng-click="addNewContent()">
+                            <span class="add-new-btn">{{'Add Content'|translate}}</span>
+                        </div>
+                        <div data-validate="parsley" id="materialBlock">
+                            <fieldset id="materialsDiv" class="material-container">
+                                <legend>{{'Session Content'|translate}}</legend>
+                                <div class="form-row">
+                                    <label class="input-label col-xs-2" for="materialTitle">{{'Material Title'|translate}}</label>
+                                    <div class="col-xs-6">
+                                        <input type="text" id="materialTitle" name="materialName" class="col-xs-12" ng-model="$parent.Material.Name"
+                                               data-parsley-group="block99" />
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <label class="input-label col-xs-2" for="materialFile">{{'Material URL'|translate}}<span class="astrisk">*</span></label>
+                                    <div class="col-xs-6">
+                                        <file-upload id="materialFile"
+                                                     url="$parent.Material.Url"
+                                                     data-parsley-group="block99"
+                                                     data-parsley-required-message="{{'Material URL is required.'|translate}}"
+                                                     required="true"></file-upload>
+                                        <label id="NoMaterialValidation" class="validation-msg" style="display: none">{{'Material URL is required.'|translate}}</label>
+                                    </div>
+                                    <span class="col-xs-2">
+                                        <button id="AddMaterialBtn" class="add-btn" type="button" ng-click="AddMaterial()">{{'Add'|translate}}</button>
+                                    </span>
+                                </div>
+                                <ul class="material-listing">
+                                    <!-- to do : material Directive  in materialblocks.html-->
+                                    <li ng-repeat="material in $parent.Materials" class="form-row add-material-listing col-xs-12">
+                                        <a id="MaterialURLLnk" ng-href="{{material.Url}}" target="_blank">{{material.Name}}</a>
+                                        <input type="button" id="btnDeleteMaterial" ng-click="DeleteMaterial(material)" />
+                                    </li>
+                                </ul>
+                            </fieldset>
+                        </div>
+                    </div>
+                    <ul class=" session-repeater-ul  col-xs-12">
+                        <!-- to do : session Directive in sessionblocks.html -->
+                        <li ng-repeat="session in Course.Sessions" class="form-row session-repeater  col-xs-12">
+                            <span class="edit-container">
+                                <input type="button" id="btnEditSession" class="edit-btn edit-session-btn" ng-click="EditSession(session,$index)" />
+                                <input type="button" class="delete-btn" id="btnDeleteSession" ng-click="DeleteSession(session,$index)" />
+                            </span>
+                            <div class="editable-text">
+                                <label id="lblSessionName" class="input-label col-xs-12">{{session.Name}}</label>
+                                <div class="form-row publish-date">
+                                    <span>{{'Published'|translate}} : </span>
+                                    <label id="lblPublishingDate">{{session.PublishedDate | date:"dd-MMM-yyyy"}}</label>
+                                </div>
+                                <div class="form-row session-obj">
+                                    <span>{{'Objectives'|translate}}:</span>
+                                    <label id="lblObjectives" class="col-xs-12">{{session.Objectives}}</label>
+                                </div>
+                                <div class="form-row content-container">
+                                    <span class="col-xs-2">
+                                        <span class="session-content-lbl" ng-show="session.Materials">{{'Session Content'|translate}}:</span>
+                                    </span>
+                                    <ul class="session-materials col-xs-10">
+                                        <li class="material-row" ng-repeat="material in session.Materials">
+                                            <img src='' class="material-icon" />
+                                            <a id="SessionMaterialURLLnk">{{material.Name}}</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </li>
+                        <!-- end of list of sessions -->
+                    </ul>
+                    <label id="noSessionValidation" class="parsley-errors-list validation-msg filled" style="display: none">{{'You should add at least one session'|translate}}</label>
+                </fieldset>
+                <footer class="nav-btn-cont">
+                    <button class="btn admin-def-btn btnNext" changeblock block="6" currentstep="$parent.currentstep">{{'Next'|translate}}</button>
+                    <button class="admin-def-btn btnPrevious" changeblock block="4" currentstep="$parent.currentstep">{{'Back'|translate}}</button>
+
+                </footer>
+
+            </div>
+            <div class="second block6 " ng-switch-when="6">
+
+                <!-- Course Competencies  -->
+                <fieldset class="course-competencies  session-module-bg">
+                    <legend>{{'Course Competencies'|translate}}</legend>
+
+                    <div id="CompetenciesTree" class="Competenciestreeview"
+                         model="allCompetenciesTree"
+                        ng-model="Course.Competencies">
+                    </div>
+                </fieldset>
+                <footer class="nav-btn-cont">
+                    <button class="btn admin-def-btn btnNext" changeblock block="7" currentstep="$parent.currentstep">{{'Next'|translate}}</button>
+                    <button class="admin-def-btn btnPrevious" changeblock block="5" currentstep="$parent.currentstep">{{'Back'|translate}}</button>
+
+                </footer>
+
+            </div>
+            <div class="second block7 " ng-switch-when="7">
+
+                <!-- Course FAQs -->
+                <!--create-->
+                <fieldset class="help-support-faq  session-module-bg">
+                    <legend>{{'Course FAQs'|translate}}</legend>
+                    <div class="form-row">
+                        <label class="input-label col-xs-2" for="faqQuestion">{{'Question'|translate}}</label>
+                        <div class="col-xs-10">
+                            <!--<textarea class="col-xs-12" ng-model="$parent.FAQ.Question" id="faqQuestion"></textarea>-->
+                            <input type="text" class="col-xs-12" ng-model="$parent.FAQ.Question" id="faqQuestion" />
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <label class="input-label col-xs-2" for="faqAnswer">{{'Answer'|translate}}</label>
+                        <div class="col-xs-10">
+                            <textarea class="col-xs-12" ng-model="$parent.FAQ.Answer" id="faqAnswer"></textarea>
+                        </div>
+                    </div>
+                    <button id="btnAddFAQ" class="add-btn faq-btn" ng-click="AddFAQ()">{{'Save FAQ'|translate}}</button>
+                </fieldset>
+                <!--FAQ list-->
+                <div class="faq-listing" coursefaqs model="Course.FAQs"></div>
+                <footer class="nav-btn-cont">
+                    <label id="lblMissingFields" class="parsley-errors-list filled" style="display: none">{{'Please fill all missing mandatory fields before publishing your course'|translate}}</label>
+                    <button class="pd-btn btn publish-btn" ng-click="Publish()" ng-hide="isEditMode">{{'Publish'|translate}}</button>
+                    <button class="pd-btn btn publish-btn" ng-click="Publish()" ng-show="isEditMode">{{'Update'|translate}}</button>
+                    <button class="admin-def-btn btnPrevious" changeblock block="6" currentstep="$parent.currentstep">{{'Back'|translate}}</button>
+
+                </footer>
+            </div>
+        </div>
+    </div>
+</form>

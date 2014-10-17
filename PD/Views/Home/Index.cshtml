@@ -1,0 +1,23 @@
+﻿@section scriptsTop
+{
+}
+@section scriptsBottom
+{
+    <script src="~/Scripts/toastr.min.js"></script>
+}
+
+@section AppScripts
+{
+    <script src="~/Application/Controllers/AdminCtrl.js" type="text/javascript"></script>
+    <script src="~/Application/Controllers/DashboardCtrl.js"></script>
+    <script src="~/Application/Controllers/CoursesCatalogCtrl.js"></script>
+    <script src="~/Application/Services/adminRouting.js"></script>
+    <script src="~/Application/Directives/Directives.js"></script>
+
+}
+
+
+<div class="view-animate-container">
+    <div class="row " ng-view></div>
+</div>
+

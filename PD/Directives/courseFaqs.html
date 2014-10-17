@@ -1,0 +1,6 @@
+﻿<ul class="faq-list-question">
+    <li ng-repeat="FAQ in FAQS">
+        <h2 ng-click="toggleFAQ(FAQ)" ng-class="{expanded : FAQ.show == true}">{{FAQ.Question}}</h2>
+        <p ng-show="FAQ.show">{{FAQ.Answer}}<span class="answer-text" ng-show="FAQ.show">{{'Answer'|translate}}</span></p>
+    </li>
+</ul>

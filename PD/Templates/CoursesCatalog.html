@@ -1,0 +1,55 @@
+﻿<article class="centered-item catalog">
+<!-- left col -->
+<aside class="col-xs-3 first-col" cg-busy="categoriesPromise">
+    <div class="filter-by">
+        <div class="filter-by-item">
+            <a ng-click="showFilterPopup()" id="FiltersLink" class="filter-competencies-link" data-toggle="modal">{{CompetencyFilterTxt}}</a>
+        </div>
+        <div id="competenciesModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <header class="modal-header">
+                        <h4 class="modal-title">{{"Competencies"|translate}}</h4>
+                        <button type="button" class="close" ng-click="cancelPopupFilter()" data-dismiss="modal" aria-hidden="true">×</button>
+                    </header>
+                    <!-- Tree -->
+                    <div id="CompetenciesTree" class="searchCompetenciestreeview" model="CompetenciesTree"></div>
+                    <footer class="Competencies-action-btns">
+                        <button ng-click="cancelPopupFilter()" class="cancel-link pd-btn" title="Cancel">{{"Cancel"|translate}}</button>
+                        <button ng-click="FilterPopup()" class="filter-link pd-btn" title="Filter">{{"Filter"|translate}}</button>
+                    </footer>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Tree -->
+    <a class="linkAll" ng-click="getAllCourses()">{{'All'|translate}}</a>
+    <nav id="filter-accordion" class="Search-result-tree treeview" model="tree" ng-model="search.CategoryId">
+    </nav>
+
+</aside>
+<!-- /left col -->
+<!-- right col -->
+<section class="col-xs-9 second-col" cg-busy="coursesPromise">
+    
+    <div class="col-xs-12 course-section">
+        <h3 id="categoryTitle">{{treefilter}}</h3>
+        <ul class="col-xs-12 list-course-by-category">
+            <li ng-repeat="course in filterdcourses = (courses | filter:myFilterTest) | startFrom:currentPage*pageSize | limitTo:pageSize" class="col-xs-4 course-item">
+                <course-card course="course"></course-card>
+            </li>
+        </ul>
+
+        <div class="col-xs-12 pagination-bar" ng-show="PagingFlag">
+            <button class="btn promlink-prev-arrow" ng-class="{btnDisabled : currentPage == 0}" ng-disabled="currentPage == 0" ng-click="currentPage=currentPage-1"> < </button>
+            {{currentPage+1}}/{{numberOfPages()}}
+            <button class="btn promlink-next-arrow" ng-class="{btnDisabled : currentPage >= filterdcourses.length/pageSize - 1}" ng-disabled="currentPage >= filterdcourses.length/pageSize - 1" ng-click="currentPage=currentPage+1"> > </button>
+        </div>
+    </div>
+    <div class="no-courses colr-xs-12" ng-hide="PagingFlag">
+        <p>{{'There are no courses in this category'|translate}}<br />{{'Please select another category or use Search option'|translate}}</p>
+    </div>
+
+</section>
+<!-- /right col -->
+</article>

@@ -1,0 +1,209 @@
+﻿@using System.Configuration
+<!DOCTYPE html>
+<html ng-app="app" ng-controller="TranslateController">
+<head>
+    <title>@ViewBag.Title</title>
+    <meta name="description" content="@ViewBag.MetaDescription">
+    <meta name="keywords" content="@ViewBag.MetaKeywords ">
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link rel="stylesheet" type="text/css" href="~/content/common/css/normalize.css" />
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="~/content/common/css/bootstrap.min.css" />
+
+    <link rel="stylesheet" type="text/css" ng-href="{{layoutPath}}" />
+    <link rel="stylesheet" type="text/css" ng-href="{{themePath}}" />
+
+    <link href="~/Content/datepicker.css" rel="stylesheet" />
+
+
+    <link href="~/Scripts/angular-busy.css" rel="stylesheet" />
+    <link href="~/Content/animation.css" rel="stylesheet" />
+
+
+    <script src="~/Scripts/jquery-1.9.1.min.js"></script>
+    <script src="~/Scripts/moment.js"></script>
+    <script src="~/Content/common/js/bootstrap.min.js"></script>
+
+
+    <script src="~/scripts/angular.js" type="text/javascript"></script>
+    <script src="~/Scripts/angular-resource.js"></script>
+    <script src="~/Scripts/angular-route.js"></script>
+
+
+    <script src="~/Scripts/angular-scenario.js"></script>
+    <script src="~/Scripts/angular-animate.js"></script>
+
+    <script src="~/Scripts/angular-strap.min.js"></script>
+    <script src="~/Scripts/angular-strap.tpl.min.js"></script>
+
+    <script src="~/Scripts/q.js"></script>
+    <script src="~/Scripts/breeze.debug.js"></script>
+    @*<script src="~/Scripts/to$q.js"></script>*@
+
+
+    <script src="../Content/common/js/jquery.slimscroll.min.js"></script>
+    <script src="~/Scripts/angular-busy.js"></script>
+    <script src="~/Scripts/angular-translate.js"></script>
+
+    <script src="~/Scripts/ui-bootstrap-tpls-0.11.0.js"></script>
+    @*    <script src="~/Scripts/angular-strap.js"></script>
+        <script src="~/Scripts/angular-strap.tpl.js"></script>*@
+
+    @*    <link href="~/Scripts/breeze.directives.css" rel="stylesheet" />
+        <script src="~/Scripts/breeze.directives.js"></script>*@
+
+    @*<script src="~/Scripts/Wizard/lodash.js"></script>
+        <link href="~/Scripts/Wizard/angular-wizard.css" rel="stylesheet" />
+        <script src="~/Scripts/Wizard/angular-wizard.js"></script>*@
+
+
+    <script src="~/Application/Services/DataContext.js"></script>
+    <script src="~/Application/Services/UserServices.js"></script>
+
+    <script src="~/Application/Controllers/Common.js"></script>
+    @RenderSection("AppScripts", false)
+
+
+    <script src="~/Scripts/highcharts/highcharts.js"></script>
+
+
+    @*<script src="~/tinymce/jquery.tinymce.js"></script>
+        <script src="~/Application/Directives/tinymceDirective.js"></script>*@
+
+
+    <script src="~/Scripts/Tree/jquery-ui.custom.js"></script>
+    <script src="~/Scripts/Tree/jquery-ui.custom.min.js"></script>
+    <script src="~/Scripts/Tree/jquery.cookie.js"></script>
+    <script src="~/Scripts/Tree/jquery.dynatree.js"></script>
+    <link href="~/Scripts/datetimepicker.css" rel="stylesheet" />
+    <script src="~/Scripts/datetimepicker.js"></script>
+    @*<script src="~/Scripts/Tree/ManagedMetadataHandler.js"></script>
+        <script src="~/Scripts/Tree/ManagedMetadataTree.js"></script>*@
+
+    <script src="~/Localization/ar-sa.js"></script>
+    <script src="~/Localization/en-us.js"></script>
+    <script src="~/Localization/fr.js"></script>
+    <script src="~/Scripts/parsley.min.js"></script>
+
+    <link href="~/Scripts/Tree/skin/ui.dynatree.css" rel="stylesheet" />
+    <link href="~/Content/toastr.css" rel="stylesheet" />
+    <script src="~/Scripts/AutoComplete/jquery.tokeninput.js"></script>
+
+    @RenderSection("Scripts", false)
+    @RenderSection("ScriptsTop", false)
+
+</head>
+<body>
+    <header class="navbar navbar-default">
+        <!-- first part -->
+        <div class="header-topbar">
+            <!-- Site Logo with link to root -->
+            <a href="/#/Dashboard">
+                <img src="~/content/en-us/images/background/logo.jpg" alt="Professional Development" />
+            </a>
+            <!-- user account -->
+            <div class="col-xs-3 col-lg-2 account-nav">
+                <div class="lang-sw-cont">
+                    <a class="lnkSwitcher" ng-hide="rtl" ng-click="changeLanguage('ar-sa')">عربى</a>
+                    <a class="lnkSwitcher" ng-show="rtl" ng-click="changeLanguage('en-us')">English</a>
+                </div>
+                @if (Request.IsAuthenticated)
+                {
+                    if (User.IsInRole("Administrator"))
+                    {
+
+                        @*<div id="divCreateCourse" class="disp-inl-block">
+                                <a href="/#/CreateCourse" ng-click="reloadCreateCourse()">
+                                    {{'Create_Course'|translate}}
+                                </a>
+                            </div>
+                            <div class="administration disp-inl-block">
+                                <a href="/admin" class="admin-tools">
+                                    {{'Administration'|translate}}
+                                </a>
+                            </div>*@
+                        <div class="dropdown admin-tools admin-dropdown">
+                            <a data-toggle="dropdown">Administrative Tools<span class="caret"></span></a>
+                            <ul class="dropdown-menu nav nav-pills" role="menu" aria-labelledby="dLabel">
+                                <li>
+                                    <a href="/admin" class="administration">
+                                        {{'Manage Courses'|translate}}
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/#/CreateCourse" ng-click="reloadCreateCourse()">
+                                        {{'Create_Course'|translate}}
+                                    </a>
+                                </li>
+                                <li><a>Item 3</a></li>
+                            </ul>
+                        </div>
+                    }
+                    <div class="disp-inl-block">
+                        <a href="/Home/UserProfile" class="profile-icon user-dropdown dropdown-toggle">
+                            <span class="user-dropdown dropdown-toggle">
+                                {{'Welcome'|translate}}
+                            </span> @User.Identity.Name
+                        </a>
+
+                    </div>
+                }
+            </div>
+            <!-- /user account -->
+        </div>
+        <!-- /first part -->
+        <!-- second part -->
+        <div class="row second-bar">
+            <div class="wrapper-menu">
+                <!-- Main nav -->
+                <div class="col-xs-6">
+                    <ul class="left-nav MainMenu">
+                        <li class="my-dashboard-menu-item selected-menu-item">
+                            <a href="/#/Dashboard" class="home-icon">
+                                {{'Dashboard' | translate}}
+                            </a>
+                        </li>
+                        <li class="course-cataloge-menu-item">
+                            <a href="/#/CoursesCatalog" ng-click="reload()">
+                                {{'Catalog'|translate}}
+                            </a>
+                        </li>
+                        @*<li class="course-cataloge-menu-item">
+                                <a href="#/CreateCourse">
+                                    {{'Create_Course'|translate}}
+                                </a>
+                            </li>*@
+                    </ul>
+                </div>
+                <!-- /Main nav -->
+                <!-- search bar -->
+                <search-box></search-box>
+                <!--/ search bar -->
+            </div>
+        </div>
+        <!-- /second part -->
+    </header>
+
+    <div class="container-fluid">
+        @RenderBody()
+    </div>
+
+    <footer class="masterFooter">
+        <div class="footer-wrapper">
+            <!--copy rights row -->
+            <div class="copy-rights">© 2014 TeacherProfessionalDevelopment</div>
+            <!--/copy rights row -->
+            <div class="clearfix"></div>
+        </div>
+    </footer>
+
+
+    @RenderSection("scriptsBottom", required: false)
+
+    @if (ConfigurationManager.AppSettings["EnableAnalytics"] == "true")
+    {
+        Html.RenderPartial("_GoogleAnalytics");
+    }
+</body>
+</html>

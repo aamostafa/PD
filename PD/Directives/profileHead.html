@@ -1,0 +1,83 @@
+﻿<fieldset class="profile-head">
+ 
+<div id="BasicInfoEditMode" class="centered-cont BasicInfoViewMode" ng-show="BasicInfoEditMode">
+        <div class="profile-img-cont">
+            <img ng-src="{{userImage != NULL && userImage || '../content/en-us/images/user-default.png'}}" alt="{{'Profile Image'|translate}}" />
+            <file-upload url="userImage" accept='image/*'></file-upload>
+        </div>
+    <div class="profile-head-details col-xs-9">
+        <h2 class="col-xs-11">{{UserProfiles.UserName}}</h2>
+        <span class="col-xs-11 job-title">{{UserProfiles.Title.Name}}</span>
+        <!-- School -->
+        <div class="form-row">
+            <label class="input-label col-xs-2">{{'Place of work'|translate}}</label>
+                <input class="col-xs-6" ng-model="userSchool" />
+        </div>
+        <!-- Country/Region -->
+        <div class="form-row session-section">
+            <label class="input-label col-xs-2">{{'Country'|translate}}</label>
+            <div class="col-xs-6">
+                <select class="col-xs-12"
+                        name="country"
+                        id="countryddl"
+                        ng-model="CountryId"
+                        ng-options="c.Id as c.Name for c in Countries"
+                            ng-change="SelectCountry()">
+                    <option value="">{{'Select Country'|translate}}</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-row session-category" ng-show="CountryId">
+            <label class="input-label col-xs-2">{{'Region'|translate}}</label>
+            <div class="col-xs-6">
+                <select class="col-xs-12"
+                        name="regionSelect"
+                        ng-model="RegionId"
+                            ng-options="c.Id as c.Name for c in Regions">
+                    <option value="">{{'Select Region'|translate}}</option>
+                </select>
+            </div>
+        </div>
+        <!-- Gender  -->
+        <div class="form-row">
+            <span class="col-xs-2">
+                <label class="input-label">{{'Gender'|translate}}</label>
+            </span>
+                <div class="col-xs-6">
+                    <input type="radio" name="gender" id="male" title="{{'Male'|translate}}" value="Male" ng-model="userGender" data-parsley-group="block1" data-parsley-required-message="{{'Gender is required'|translate}}" data-parsley-required="true" />
+                <label for="male" class="radio-label">{{'Male'|translate}}</label>
+                    <input type="radio" name="gender" id="female" title="{{'Female'|translate}}" value="Female" ng-model="userGender" data-parsley-group="block1" data-parsley-required-message="{{'Gender is required'|translate}}" data-parsley-required="true" />
+                <label for="female" class="radio-label">{{'Female'|translate}}</label>
+        </div>
+            </div>
+        <!-- Joing Date  -->
+        <div class="form-row">
+            <label class="input-label col-xs-2">{{'Joined In'|translate}} </label>
+            <time class="col-xs-6">{{UserProfiles.JoinedDate|date:"dd-MMM-yyyy"}}</time>
+        </div>
+            <footer>
+        <button class="save-session" ng-click="SaveBasicInfo(UserProfiles)">{{'Save'|translate}}</button>
+        <button class="cancel-session" ng-click="CancelBasicInfo(UserProfiles)" ng-show="UserProfiles.Gender">{{'Cancel'|translate}}</button>
+            </footer>
+            <div>
+                <!-- Img Validation  -->
+                <span class="col-xs-12">{{ImageHintLabel}}</span>
+                <label id="ImgUploadValidation" class="validation-msg col-xs-12" style="display: none">{{'Invalid file, please upload an image'|translate}}</label>
+    </div>
+</div>
+    </div>
+<div id="BasicInfoViewMode" class="centered-cont BasicInfoViewMode" ng-hide="BasicInfoEditMode">
+        <button class="edit-btn" ng-click="EditBasicInfo()"></button>
+    <div class="profile-img-cont">
+        <img ng-src="{{UserProfiles.ImageUrl != NULL && UserProfiles.ImageUrl || '../content/en-us/images/user-default.png'}}" alt="{{'Profile Image'|translate}}" />
+    </div>
+    <div class="profile-head-details">
+            <h2>{{UserProfiles.UserName}}</h2>
+            <h3 class="job-title">{{UserProfiles.Title.Name}}</h3>
+            <span class=" school-name view-text ellipsis" ng-show="UserProfiles.School">{{UserProfiles.School}}</span>
+            <span class="user-location view-text" ng-show="UserProfiles.Region.Name">{{UserProfiles.Region.Name}}, <span class="" ng-show="UserProfiles.Country.Name"> {{UserProfiles.Country.Name}}</span></span>
+            <span class="date-icon  view-text">{{'Joined In'|translate}}<time>{{UserProfiles.JoinedDate|date:"dd-MMM-yyyy"}}</time></span>
+        <span class="gender view-text">{{UserProfiles.Gender |translate}}</span>
+    </div>
+</div>
+</fieldset>

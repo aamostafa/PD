@@ -1,0 +1,635 @@
+﻿/* Temporary */
+.dynatree-icon {display:none!important}
+/* manage-courses Temporary */
+.manage-courses{font-size:1.4em;font-family:'trebuchet_msregular'}
+.manage-courses a{color:green}
+
+/** General **/
+@font-face {
+    font-family: 'droid_arabic_kufiregular';
+    src: url('../fonts/droidkufi-regular.eot');
+    src: url('../fonts/droidkufi-regular.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/droidkufi-regular.woff') format('woff'),
+         url('../fonts/droidkufi-regular.ttf') format('truetype'),
+         url('../fonts/droidkufi-regular.svg#droid_arabic_kufiregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'trebuchet_msregular';
+    src: url('../fonts/trebuchet_ms.eot');
+    src: url('../fonts/trebuchet_ms.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/trebuchet_ms.woff') format('woff'),
+         url('../fonts/trebuchet_ms.ttf') format('truetype'),
+         url('../fonts/trebuchet_ms.svg#trebuchet_msregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+HTML, body{font-family:'trebuchet_msregular'; font-size:83%;}
+HTML,body{direction:rtl;}
+h2{font-size: 1.4em;}
+h3{font-size: 1.3em;}
+h4{font-size: 1.2em;}
+.responsive-img img,.responsive-img{max-width: 100%;min-width: 100%;}
+.course-img img{max-width: 100%;right:0px !important;top:0px;display: block;position:relative;margin:0 auto;}
+.disp-inl-block {display:inline-block}
+.clear{clear:both}
+a:focus {outline: none;}
+.no-right-padding{padding-right:0px;}
+.no-left-padding{padding-left:0px;}
+.no-left-right-padding{padding-left:0px;padding-right:0px;}
+.pd-29-right{padding-left:29px;}
+.no-result-msg{padding: 12px 50px;font-size: 1.5em;font-family: 'signikaregular';}}
+.ms-webpartzone-cell{margin-bottom:0px;}
+/* Trim */.ellipsis{overflow:hidden;text-overflow:ellipsis;white-space:nowrap; } 
+/** checkbox style **/
+.toggle {display:inline-block;width:18px;height:15px;float:left;}
+.toggle.checked {background-position: right bottom;}
+.radio-label {vertical-align:text-bottom;;margin:0px 0px 0px 5px;}
+.float-dir{float:right}
+.float-rev{float:left}
+.checkbox-label {padding:5px}
+
+/** custom  general bootstrap class**/
+label {font-weight:normal}
+.container-fluid{padding:0px;min-height:730px;/*margin-top:27px*/}
+.centered-item{/*max-width:1166px;min-width:980px*/width:93%;margin:0 auto 59px}
+.row{margin:0px;}
+.caret{width:8px;height:5px;margin-left:5px;}
+.btn-default,.btn-default:hover, .btn-default:focus, .btn-default:active, .btn-default.active, .open .dropdown-toggle.btn-default{  border-radius: 4px;cursor: pointer;display: inline-block;font-size: 1.1em;line-height: 1.42857;margin-bottom: 0;padding: 6px 12px;text-align: center;vertical-align: middle;white-space: nowrap;font-size: 16px;padding:5px 40px;}
+.btn-default[disabled], .btn-default[disabled]:hover, .btn-default[disabled]:active{cursor:default!important}
+.dropdown-menu{font-size:1.1em;}
+.col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .col-xs-11, .col-xs-12{float:right;}
+.navbar-header{float:right;}
+.nav > li > a{padding:10px 0px;}
+.nav-tabs > li > a{margin:0px 0px 0px 28px;}
+ul.nav-tabs{padding-right:0px;}
+.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12{
+padding-left:0px;padding-right:0px;}
+.navbar-toggle{display:none;}
+.navbar-header{width:100%;}
+/** bootstrap popup **/
+.modal-content{ padding:10px;}
+.modal-title{font: 2em 'droid_arabic_kufiregular';color:#575757;}
+.modal-content ul.dynatree-container{border:0px;}
+.modal-header{margin-bottom:10px;}
+.modal-content span.dynatree-checkbox{ margin-right: 24px; margin-top: 9px;}
+.modal-content .close{position:relative; float:left;}
+.modal-content #CompetenciesTree > ul > li > .dynatree-has-children a{white-space: normal;word-wrap: break-word;}
+
+/** header **/
+#SearchTxtValidation{padding: 15px;font-size: 1.2em;position: absolute;z-index: 99999;left: 0px;top:36px;}
+.header-topbar,.second-bar .wrapper-menu{/*max-width:1166px;min-width:960px*/width:93%;margin:0 auto;padding:0px;}
+.second-bar, .wrapper-menu {clear:both}
+.header-topbar{padding-top:17px;padding-bottom:17px;}
+.second-bar{padding-top:0px;padding-bottom:0px;}
+.navbar{border-radius:0px;margin-bottom:0px}
+.navbar-brand{height:51px;width:213px;display:inline-block;text-indent: -9999px;}
+.search-bar {position:relative;float:left;padding:0px;height: 35px;margin: 5px 0;}
+.search-bar #btnSearch{display: block;height: 35px;line-height: 35px;position: absolute;left: -1px;text-align: center;top: 0px;width: 43px;min-width:43px; text-indent: -9999px;  cursor:pointer;}
+.txtSearchBox{font: 1.3em verdana;padding: 8px;width: 85%;outline: none;border-radius: 3px;}
+.search-bar .form-control{height:37px;}
+.search-tooltip{display:none;position:absolute;font-size:14px;padding:10px;z-index:1; width: 71%;  right: 12%; margin: 5px 0;}  
+.search-tooltip .search-tooltip-arrow{ top: -7px; width: 96%; height: 7px;display:block; position:absolute;}
+#home-search{height:37px; text-align:right;}
+ul.left-nav{font-size:1.4em;list-style-type:none;margin:3px 0px 0px 0px;padding:0px;}
+ul.left-nav li{display:inline-block; float:right;}
+ul.left-nav li a{display: inline-block;padding:5px 10px}
+ul.left-nav li a:link, .left-nav li a:hover, .left-nav li a:visited, .second-bar a:link, .second-bar a:hover, .second-bar a:visited{font:1em 'droid_arabic_kufiregular';	}
+ul.left-nav li a:hover{ text-decoration:none;}
+ul.left-nav li a.home-icon{padding-right:25px;}
+.second-bar .col-xs-6{padding:0px;}
+.user-login-name, .user-dropdown{font-weight:bold;font-size:1.2em;}
+.header-icons-part{float:left;padding:0px;}
+.popover-markup{position:relative; float:right;padding:13px 0px 8px 0px; background:#038031; margin-left:1px; text-align:center; width: 54px; }
+#wishlistlink{width:20px;height:17px;display:inline-block;margin-top:2px;}
+#requestlink{width:25px;height:18px;display:inline-block;margin-top:1px;}
+#notificationlink{width:18px;height:17px;display:inline-block;}
+#scroll-div1{height:286px;overflow-y:auto;}
+#scroll-div2{height:375px;overflow-y:auto;}
+#scroll-div3{height:422px;overflow-y:auto;}
+.user-dropdown, .user-login-name{margin-top:11px;padding-right: 10px;}
+a.setting-icon:link,a.setting-icon:hover,a.setting-icon:visited{padding-right:30px;}
+a.help-icon:link,a.help-icon:hover,a.help-icon:visited{padding-right:30px;}
+a.logout-icon:link,a.logout-icon:hover,a.logout-icon:visited{padding-right:30px;}
+.tooltip-popover-title{font-size: 1.2em; margin:5px 10px 0px 10px;padding-bottom:9px;}
+.tooltip-popover{font-size: 1.4em; border-radius:0px;}
+.tooltip-popover-content-footer{padding:10px;text-align:center;font-size: 1.2em;margin:0px;}
+.items-row{padding:10px;margin:0px;}
+.col-xs-12.notification-item,.col-xs-12.wishlist-item,.col-xs-12.request-item {padding-bottom:10px;padding-top:10px;}
+.col-xs-12.notification-item:first-child,.col-xs-12.wishlist-item:first-child,.col-xs-12.request-item:first-child{padding-top:0px;} 
+.tooltip-date{font-size: 1em;/*display:block;*/ float:right;}
+.popover-arrow{width:30px;height:16px; display:inline-block; left: 40%;position: absolute;top: -14px;min-width:65px;}
+.popover-content .col-xs-3,.popover-content .col-xs-12,.popover-content.col-xs-9 ,.popover-content .col-xs-2 ,.popover-content .col-xs-2 ,.popover-content .col-xs-4,.popover-content .col-xs-8,.popover-content .col-xs-10{padding:0px;}
+.popover-content{width:286px;z-index:2;/*min-width:725%;*/left:-103px;margin-top:13px;font-size:1.4em;padding:0px; position:absolute;display:none; text-align:right;}
+.popover-content ul {list-style-type:none;}
+.popover-content .course-name{font-size: 1em;font-weight: 700;margin-top:0px;margin-bottom:5px; padding-right: 84px;}
+.popover-content  .status-bar{font-size: 1em;padding-right:10px;}
+.navbar-nav > li > .sp-dropdown-menu{margin-top:29px;}
+a.create-course-icon:link,a.create-course-icon:hover,a.create-course-icon:visited{padding-left:30px;}
+a.set-privileges-icon:link,a.set-privileges-icon:hover,a.set-privileges-icon:visited{padding-left:30px;}
+a.upload-icon:link,a.upload-icon:hover,a.upload-icon:visited{padding-left:30px;}
+a.upload-competences-icon:link,a.upload-competences-icon:hover,a.upload-competences-icon:visited{padding-left:30px;}
+.account-nav{float:left;text-align:left}
+.add-to-favorite{float:left;}
+.wishlist-icon{float:left;}
+/* Admin menu */
+.admin-dropdown li{width:100%;text-align:right}
+.admin-dropdown li a{padding:10px;}
+
+/*** course catalogue ***/
+.course-section .push-btn-cont  button, .course-section .push-btn-cont  button:hover{float:left;margin-right:10px;font-family: "droid_arabic_kufiregular";font-size:1.4em!important}
+.course-section .push-btn-cont  .no-of-items{float:left;clear:both;margin: 7px 0px;font-family: "droid_arabic_kufiregular";font-size:1.2em}
+.course-item .pd-checkbox{position:absolute;top:10px;right:10px;z-index:99;width:17px;height:17px;}
+.listing-checkbox{opacity: 0;z-index:100;position:relative;top:-2px;left:-2px;}
+#Push-popup .modal-content {display:inline-block;width:100%}
+#Push-popup .modal-header h4 {display:inline-block;}
+.catalog{margin-top:27px}
+.no-courses{height:460px;font-size:2em;text-align:center;font-family:'droid_arabic_kufiregular';margin-top:30px}
+.no-courses p:nth-child(1){padding-top:225px}
+aside.pd-29-right{padding-right:0px;}
+aside.first-col{padding-right:0px}
+.second-col{padding:0px;}
+ul.list-course-by-category{margin:0px 0px 19px 0px;padding:0px; float:right;}
+.course-section{padding:29px;}
+.course-section h3{font-size:2.2em;margin:0px 0px 14px 0px}
+.list-course-by-category li {font-size: 1.2em;padding: 0;display: block;float: right;width:30.5%;margin:0 0 37px 4.2% ; height:408px;overflow:hidden; background:#f5f5f5; border-bottom:1px solid #ebebeb; position:relative;}
+.list-course-by-category li.margin0-left{margin-left:0px;}
+.list-course-by-category  li:nth-child(3n+3) {margin:0px}
+.list-course-by-category li:hover .dashed,.list-course-by-category li:hover .course-item-details,.list-course-by-category li:hover .favorite-bar{display:none;}
+.list-course-by-category li:hover .custom-course-item-details,.list-course-by-category li:hover .favorite-bar-hover{display:block;}
+.list-course-by-category li:hover .dashed{display:inline;}
+.list-course-by-category .course-img{padding:0px;/*height:249px;*/ position:relative;width:100%;overflow:hidden}
+.list-course-by-category .course-item{padding:0px;}
+.course-section .course-item  .col-xs-12,.course-item  p,.course-item  footer, .course-item .publishing-date{padding:2px 15px;}
+.course-item  p.custom-course-item-details{margin-bottom:10px;opacity:0;}
+.filter-courses{font-size: 1.4em;padding-right:15px;}
+.filter-courses ul{list-style-type:none;}
+.filter-courses .panel-default > .panel-heading{border:0px;}
+.filter-courses input,.filter-courses button,.filter-courses select,.filter-courses textarea{font-family: 'Century Gothic Regular','Century Gothic';font-size: 14px;}
+.filter-courses .panel{border:0px;}
+.filter-courses .panel-default > .panel-heading + .panel-collapse .panel-body{border-top:0px;padding-top:0px;padding-bottom:0px;}
+.filter-courses .panel-group{margin-bottom:0px;}
+.filter-by-tag{font-family: 'Segoe UI Symbol Bold','Segoe UI Symbol';font-size: 1.8em;font-weight: 700;}
+.filter-courses .filter-by-tag-wrapper{font-family: 'Century Gothic Regular','Century Gothic';font-size: 1.5em;}
+.filter-courses .filter-by-tag-wrapper ul{padding-left:0px;}
+.filter-courses .filter-by-tag-wrapper span{margin-right:5px;font-size:2em;}
+.favorite-bar-hover .glyphicon {font-size:1.5em;margin-top:6px;margin-right:10px;}
+.custom-course-item-details.block-display,.favorite-bar-hover.block-display{display:block;}
+.course-item footer.favorite-bar-hover{opacity:0;border-width:0px;margin-top:28px;padding:0px 15px;float:right;width:100%;position:absolute;bottom:0px;}
+.favorite-bar-hz-sep{margin-right:5px;}
+.pagination-bar {text-align:center;border-radius:5px;}
+.pagination-bar button{display:inline-block;margin:0px 3px;font-size: 1.6em; font-family:'droid_arabic_kufiregular';cursor:pointer;height:26px;width:26px;padding:0px}
+.course-item h4.course-name{font-size: 1.3em; font-family:'droid_arabic_kufiregular';}
+.course-item .course-date{font-size: 1.1em;}
+.course-item .course-owner, .course-item .course-owner:hover{font-size: 1.1em;cursor:default}
+.course-item dl{margin-bottom:0px}
+.block-details{height:397px; float:right;width:100%;position:absolute;}
+.course-section h3{font-family:'droid_arabic_kufiregular';}
+.inside-block-details{height:394px}
+.course-instructors dd, .course-instructors dt {display:inline}
+.course-item .course-ribbon{position: absolute;top: 8px;left: -5px;z-index: 99;width:70px;height:70px;overflow:hidden}
+.course-item .course-ribbon .online-course{position: relative;left: 961px;top:-8px}
+.course-item .course-ribbon .face2face-course{position: relative;left: 593px;top:-8px}
+
+
+/**Course details*/
+.col-xs-12.course-page-title{padding:0px;margin-top:20px;}
+.course-page-title h2{margin-bottom:10px;font-size: 2.7em;margin-top:0px;font-family:'droid_arabic_kufiregular';}
+.course-page-title h3{margin-bottom:10px;font-size: 2em;margin-top:0px;font-family:'droid_arabic_kufiregular';}
+.cors-dtls-smry-cntnr{padding:16px;margin-left:30px;width:auto;position:relative}
+.cors-dtls-smry-cntnr .course-ribbon{position: absolute;top:-5px;left:15px;height: 67px;width:57px;overflow: hidden;}
+.cors-dtls-smry-cntnr .course-ribbon img{position:absolute;left:0px}
+.course-data {font-size:1.6em;}
+.course-data dl{clear: both; font-size: 1em; float:left; margin-top:25px; padding:25px 0;}
+.course-data dt{ font-weight:normal; padding-left:0;margin-bottom:22px; font-family:'tahoma';}
+.course-data dd{margin-left:0px;margin-right:0px;}
+.course-data ul{margin:0 0 30px 0;}
+.course-data h2{margin:0; font-size: 1.3em;font-family:'droid_arabic_kufiregular';margin-bottom:10px;}
+.course-data .btn-default,.course-data .btn-default:hover,.course-data  .btn-default:focus,.course-data  .btn-default:active,.course-data .btn-default.active,.course-data .open .dropdown-toggle.btn-default{border-radius: 4px;cursor: pointer;display: inline-block;/*font-size: 1.5em;*/line-height: 1.42857;margin-bottom: 0;text-align: center;vertical-align: middle;white-space: nowrap;/*padding:4px 0px;*/}
+.course-time, .course-durtion,.course-usrs{width:268px;font-weight: normal; padding:2px 28px 5px 5px; font-family:tahoma;display:block}
+input.btn-fav-add{padding:4px 35px 4px 10px; margin-left:5px;margin-top: 7px;font-size: 1.3em;font-family:'tahoma';}
+input.btn-fav-add:hover{ text-decoration: underline}
+.course-data a{padding:0 2px 0 0; font-family:'tahoma';font-size:1.3em;}
+.course-metadata{word-wrap:break-word}
+.course-metadata dt{padding:0px;}
+button.details-enroll-btn,button.details-enroll-btn:hover{margin-right:0px;font-size: 1em!important;padding: 7px 20px!important;font-family:'droid_arabic_kufiregular';}
+.course-data .col-xs-5,.course-data .col-xs-7 ,.course-data .col-xs-12{padding:0px;}
+.course-data .col-xs-12.course-metadata{padding:28px 0px;}
+.course-summery,.course-details-info{padding:25px;}
+.course-details-info{margin-top:27px;}
+.course-summery-bg{width:100%;height:331px; display:block;padding:0px; position:relative;overflow:hidden;}
+.course-summery-bg img{max-width:100%;}
+.course-summery-bg p,.course-summery-bg ul{ font-size:1.3em;font-family:'tahoma';}
+.course-summery-bg ul{margin:0px;padding:0px; list-style-type:none;}
+.course-summery-bg ul li{margin-top:26px;padding-left:15px;}
+.course-summery-bg ul li:first-child{margin-top:0px;}
+.course-summery-bg h2{font-size: 1.3em;font-family:'droid_arabic_kufiregular';}
+.course-summery-info{padding:15px; height:100%; height: 331px;overflow:hidden;margin:0px;float:left}
+.nav.nav-tabs li{font-size:1.8em; float:right;}
+.nav.nav-tabs li a:link,.nav.nav-tabs li a:hover,.nav.nav-tabs li a:visited{font-family:'droid_arabic_kufiregular';}
+.nav-tabs > li.active > a:link,.nav-tabs > li.active > a:hover,.nav-tabs > li.active > a:visited{font-family:'droid_arabic_kufiregular';}
+.tab-content p,.tab-content ul li{ font:1.3em 'tahoma'; }
+.tab-content h2{font:1.4em 'tahoma'; margin-bottom:12px;margin-top:31px;font-weight:bold;}
+.tab-content ul{margin:0px;padding:0px; list-style-type:none;}
+.tab-content ul li{padding-left:15px;margin-bottom:12px;}
+.tab-content #Overview .col-xs-12{padding-left:0px;padding-right:0px;}
+.tab-content > .tab-pane{min-height:318px;}
+.course-details-info .nav-tabs li a, .course-details-info .nav-tabs li a:hover{font-family:'droid_arabic_kufiregular';}
+
+/** tree plugin**/
+#filter-accordion{margin-left:29px;}
+#filter-accordion ul.dynatree-container li{margin-top:2px;}
+#filter-accordion ul.dynatree-container li:first-child{margin-top:0px;}
+#filter-accordion ul.dynatree-container a:link,#tree ul.dynatree-container a:hover,#tree ul.dynatree-container a:visited{ font:1.3em 'trebuchet_msregular';white-space:normal;word-wrap: break-word;display: block;padding: 2px 10px 0;margin-bottom:2px;}
+#filter-accordion ul.dynatree-container ul  a:link,#tree ul.dynatree-container  ul  a:hover,#tree ul.dynatree-container ul a:visited{padding:10px;}
+#filter-accordion ul.dynatree-container li ul li span.dynatree-node.dynatree-active a:link,#filter-accordion ul.dynatree-container li ul li span.dynatree-node.dynatree-active a:hover,#filter-accordion ul.dynatree-container li ul li span.dynatree-node.dynatree-active a:visited{
+font:1.3em 'trebuchet_msregular';margin-left:11px;white-space:normal;word-wrap: break-word;}
+#filter-accordion span.dynatree-expanded a.dynatree-title:hover, #tree span.dynatree-expanded a.dynatree-title:visited, #tree span.dynatree-expanded a.dynatree-title:link{
+font:1.2em 'droid_arabic_kufiregular'; white-space:normal;white-space:normal;word-wrap: break-word;}
+#filter-accordion ul.dynatree-container li ul li span.dynatree-node{margin:0px 10px;}
+#filter-accordion ul.dynatree-container li ul li span.dynatree-node.dynatree-active{margin:0px;}
+#filter-accordion span.dynatree-node{padding:10px;}
+#filter-accordion ul.dynatree-container li ul{padding:0px;}
+#filter-accordion ul.dynatree-container li ul li{padding:0px;margin:0px; cursor:pointer}
+#filter-accordion ul.dynatree-container li ul li:first-child{border-top:0px;}
+#filter-accordion span.dynatree-connector{display:none;}
+#filter-accordion .dynatree-has-children + ul .dynatree-active span.dynatree-connector{display:block;height: 100%;}
+a.linkAll {padding:5px;display:block;font:1.6em  'droid_arabic_kufiregular';margin-left:29px}
+a.linkAll span {display:inline-block; cursor:pointer}
+a.linkAll span.coursesCount {float:right;margin-right:10px;font-size:14px;vertical-align:bottom;}
+#filter-accordion ul.dynatree-container li{position:relative;}
+#filter-accordion .dynatree-exp-e span.dynatree-expander,#filter-accordion .dynatree-exp-ed span.dynatree-expander,#filter-accordion .dynatree-node span.dynatree-expander{width:100%; position:absolute;top:0px;left:0px; height:44px;}
+#filter-accordion ul.dynatree-container{padding:0px;overflow:visible}
+#filter-accordion span.dynatree-node {padding: 0px;}
+#filter-accordion ul.dynatree-container  .dynatree-has-children a:link, #tree ul.dynatree-container .dynatree-has-children a:hover, #tree ul.dynatree-container .dynatree-has-children a:visited,#filter-accordion ul.dynatree-container a:link, #tree ul.dynatree-container a:hover, #tree ul.dynatree-container a:visited{font-family:'droid_arabic_kufiregular'; font-size:1.3em;} 
+#filter-accordion .dynatree-has-children + ul li a:link, #filter-accordion .dynatree-has-children + ul li a:visited, #filter-accordion .dynatree-has-children + ul li a:hover{font-family:'trebuchet_msregular'}
+
+/* Admin Create Course */
+.create-course-main fieldset legend {font-weight:700}
+button.pd-btn, a.pd-btn, button.pd-btn:hover, a.pd-btn:hover {float:left;min-width:120px!important;padding:5px 15px!important;border-radius: 4px;cursor: pointer;display: inline-block;line-height: 1.42857;margin-bottom: 0;text-align: center;vertical-align: middle;font-size: 16px!important;text-decoration:none}
+.create-course-main {float:right;width:77%;font-family:'droid_arabic_kufiregular';font-size:1.2em}
+.upload-course-image img{display: block;margin:10px auto;clear:both;max-width:100%}
+.upload-course-image input[type="file"] {display: inline-block;border-radius: 3px;margin-bottom:10px;height:auto;padding:0px 5px 0px 0px}
+.form-row {width:100%;display:inline-block}
+.form-row input, .form-row textarea, .form-row select{border-radius:5px;height: 25px;font-size: 1em;padding:0px;padding-right:5px;margin: 5px 0px;display: inline-block;}
+.form-row input[type=radio]{height: auto;margin: 5px;}
+.label-radio{font-size:0.8em;}
+.form-row textarea {resize:none;min-height:100px}
+.input-label {display:inline-block;font-size:0.85em;font-weight:700;margin-top:4px}
+.course-initials {padding: 15px;margin-bottom: 20px;font-size:1.4em;font-family:'droid_arabic_kufiregular'}
+.view-mood {font-size:1em;position:relative;clear:both}
+.result-label {margin-top:6px}
+.validation-msg, .parsley-errors-list {font-size:1em;display:block;width: 100%;padding-left: 22px!important;clear:both;margin:0px}
+a#SessionMaterialURLLnk {display:block}
+input#btnDeleteMaterial {background: none;border: none!important;font-weight: 700;padding: 3px;margin: 0px;height: auto;float:left;min-width: 0px;width: 20px;}
+#materialDiv {padding:15px;margin-bottom:15px}
+.material-container input[type=file] {padding:0px 5px 0px 0px;max-width:350px;height:auto}
+a#SessionMaterialURLLnk {display:inline-block}
+#AddContentLnk{margin-bottom: 5px;display: inline-block;font-size: 1.2em;}
+.tip-body {display:inline}
+.tip-title, .tip-body {float:right}
+.session-repeater {padding: 15px;margin-bottom:15px;position:relative}
+.nav-btn-cont{margin: 15px 0px;padding-top: 15px;display:inline-block;width:100%}
+.faq-listing {border:0px!important;margin-bottom:0px;background-color:transparent}
+.faq-list-item {display:inline-block;padding:15px;position:relative}
+.faq-listing-ul {padding:0px;list-style:none}
+.faq-listing #lblQuestionLabel, .faq-listing #lblAnswerLabel {display:block}
+.faq-listing #lblQuestionLabel {font-weight:700;font-size:1.2em}
+.faq-listing {font-size: 1.1em;margin-top:15px;display:inline-block;width:100%}
+input[type=submit].add-new-btn, .add-new-btn{padding-right:30px;margin-right:0px;margin-left:10px;cursor:pointer;}
+.label-width {width:13%}
+.create-course-main span.dynatree-checkbox {margin-right: 24px;margin-top: 9px;}
+.add-material-listing {margin-bottom:1px;float:right;padding: 0px 10px;}
+.material-listing {list-style:none;padding:0}
+#SuccessPublishDiv .modal-content, div[id$="FailurePublishDiv"] .modal-content{display:inline-block;width:100%;padding:17px;font-size:1.3em}
+#SuccessPublishDiv .modal-dialpog, div[id$="FailurePublishDiv"] .modal-dialog{margin: 200px auto;}
+#SuccessPublishDiv .modal-title, div[id$="FailurePublishDiv"] .modal-title{font-size:1.5em!important;}
+#SuccessPublishDiv .modal-header, div[id$="FailurePublishDiv"] .modal-header{padding:0}
+#divNewSession {height:100px;text-align:center;margin-bottom:8px;clear:both;cursor:pointer}
+#divNewSession .add-new-btn {padding: 5px 30px;margin: 36px auto;display: inline-block;}
+#SessionForm  {padding:20px 30px;margin-bottom:15px}
+.session-module-bg{padding:20px 30px;min-height:315px!important}
+.session-form-header{margin-bottom:0px;min-height:38px;padding:0px 30px;}
+.session-form-header .input-label{margin-top: 7px;}
+.session-form-header input{margin: 5px 0px;}
+.session-module-bg > legend{float:left}
+input[type="button"].cancel-session{float:left;margin: 5px 11px;font-size: 1em;padding: 0px;min-width:0px;padding-right: 25px}
+input[type="button"].save-session{float:left;margin: 5px 11px;font-size: 1em;padding: 0px;min-width:0px;padding-right: 25px}
+.material-container legend {width: auto;border: 0;padding: 0px 5px;font-size:1.35em;margin-bottom:0px}
+.material-container{margin: 0 2px;padding: 18px;margin-top:30px}
+button.add-btn {padding:0px 30px;margin-right:5px;font-size: 0.95em;border-radius: 5px;height: 25px;margin: 5px 0px;display: inline-block;}
+.create-course-header{margin-bottom:25px!important;margin-top:0px!important}
+.create-course-header h1{height: 100%;padding: 22px 0px 35px 0px;}
+button.edit-btn, button.edit-btn:hover,input[type="button"].edit-btn, input[type="button"].edit-btn:hover, a.edit-btn, a.edit-btn:hover{padding:15px;border:none!important;background-color:transparent;min-width: 0;margin: 60px auto;}
+input[type="button"].delete-btn, input[type="button"].delete-btn:hover, a.delete-btn, a.delete-btn:hover{padding: 15px;
+    border: none !important;
+    background-color: transparent;
+    min-width: 0;
+    margin: 60px auto;}
+.faq-listing-ul input[type="button"].edit-btn,.faq-listing-ul input[type="button"].edit-btn:hover,.faq-listing-ul a.edit-btn,.faq-listing-ul a.edit-btn:hover{margin: 30px auto;}
+.faq-listing-ul input[type="button"].delete-btn, .faq-listing-ul input[type="button"].delete-btn:hover, .faq-listing-ul a.delete-btn, .faq-listing-ul a.delete-btn:hover {margin: 30px auto;}
+.edit-container {padding:4px 13px;position: absolute;top: 0;left: 0;margin:0;font-size:12px;height:100%}
+.session-repeater-ul {padding:0;list-style:none}
+.session-repeater #lblSessionName {font-family:'droid_arabic_kufiregular';font-weight:700;font-size:1.4em}
+.session-repeater .material-row span, .session-repeater .material-row img {display:inline-block}
+.session-repeater .publish-date{font-family: 'droid_arabic_kufiregular';font-size: 1em;margin-bottom:5px}
+.session-repeater .session-obj{font-family: 'droid_arabic_kufiregular';font-size: 0.95em;margin-bottom:10px;display:inline-block}
+.session-repeater .session-content-lbl {font-family: 'droid_arabic_kufiregular';font-size: 0.95em}
+.session-repeater .material-row a,  .session-repeater .material-row img {display: inline-block;}
+.session-repeater .material-row img {width:22px;height:22px}
+button.admin-def-btn, a.admin-def-btn, button.admin-def-btn:hover, a.admin-def-btn:hover {float:left;min-width:120px!important;padding:5px 15px!important;border-radius: 4px;cursor: pointer;display: inline-block;line-height: 1.42857;margin-bottom: 0;text-align: center;vertical-align: middle;font-size: 16px!important;text-decoration:none}
+.course-settings-instructor {min-height:200px}
+.view-mood .course-name {font-family:'droid_arabic_kufiregular';font-weight:700;font-size:2em}
+.view-mood .session-section, .view-mood .session-category, .view-mood .session-name {font-family:'droid_arabic_kufiregular';font-size:1.5em}
+.view-mood .session-category {margin-top:2px}
+.hint-msg {display: inline-block;width: 100%;padding-right:20px;margin-bottom:15px}
+.alert-warning .hint-msg{margin-bottom:0px;}
+button.faq-btn {float:left;border-radius:4px;padding:5px 30px}
+.out-of-date-container .hint-msg {font-family:'droid_arabic_kufiregular';font-size:1.3em}
+button.btnPrevious.admin-def-btn, button.btnNext.admin-def-btn, button.publish-btn {margin-right:10px;float:left}
+.form-row .pd-datepicker {margin: 0px;}
+span.input-group-addon {padding: 0px 12px;}
+.lang-sw-cont {width: 100%;display: inline-block;}
+.block0 .input-label {font-size: 0.7em;}
+.form-row{clear:both;}
+.block0 .form-row input, .block0 .form-row select {font-size: 0.75em;display: inline-block;line-height: normal;}
+.view-mood {clear: both}
+ .parsley-errors-list {list-style: none;padding: 0px;font-size: 0.6em}
+ button.faq-btn{padding: 0px 30px;}
+ .dropdown-menu{direction: ltr;}
+ .editable-text{width:90%}
+#SessionForm table input.form-control{width: 38px;margin:0px;padding:0px;}
+#SessionForm table button{width:38px;text-align:center;margin:0;padding:0;}
+#SessionForm table td{text-align:center;}
+#SessionForm table .btn-link{padding:0px!important;font-size:10px;}
+#SessionForm .multi-field-row .first-set{margin-left:15px;}
+
+/* Admin Create Course NAV */
+#WizardLinks{margin-left:25px;float: right;width: 20%;font-family:'droid_arabic_kufiregular';list-style:none;padding:0px}
+#WizardLinks li{display:block;padding:12px;font-size:1.2em;margin-bottom:1px;cursor:pointer}
+#WizardLinks .wizard-link-selected{font-weight:normal;position: relative;margin-left: -26px;}
+
+/* account nav */
+.account-nav {width: auto;}
+#divCreateCourse {display:inline-block}
+#divCreateCourse.administration{margin-right:5px;}
+#divCreateCourse a{display:inline-block;font-size:1.2em;font-weight:700}
+#lang-sw-cont {text-align:left;display:inline-block;width:100%}
+a.lnkSwitcher {text-align:center;margin-bottom:3px;padding: 3px 10px;display:inline-block;font-family:'signikasemibold';float:left}
+.admin-tools{padding-right:22px;display: inline-block;font-size: 1.2em;font-weight: 700;}
+
+/* Instructors */
+#session-instructors h3 {font-family: 'signikasemibold';font-size: 24px}
+.instructor-data {display:table;height:110px;position:relative;margin:0px 47px;margin-bottom:12px;padding:11px 15px;}
+.instructor-data .instructor-img {display: block;width: 72px;height: 72px;border-radius: 36px;position: absolute;top: 0px;margin-top:18px}
+.instructor-data:nth-child(even) .instructor-img{left:-36px}
+.instructor-data:nth-child(odd) .instructor-img{right:-36px}
+.instructor-data h4 {padding:0px 30px;font-size: 16px;cursor:default;display:table-cell;vertical-align:middle;}
+/*.instructor-data:nth-child(even) h4{float:left}
+.instructor-data:nth-child(odd) h4{float:right}*/
+.instructor-data:nth-child(even) p {margin-left: 35px;}
+.instructor-data:nth-child(odd) p{margin-right:35px}
+.instructor-data p {margin-top:15px}
+.instructor-data .action-options {list-style: none;padding: 0px;margin-top: 22px;}
+.instructor-data .action-options li {display: inline-block;padding-right: 32px;margin-left: 25px;}
+.instructor-data .action-options li:first-child {display:block}
+#instructors-list {list-style:none;padding:0px}
+
+/* Dashboard */
+.chart-wrapper{width: 962px;margin: 0 auto;clear:both}
+.chart-pie{height: 440px; width: 375px;display:inline-block;float:right;margin-right:0px;position:relative;z-index:100;left:-2px}
+.chart-listing {width:587px;display:inline-block;float:right;height:440px;padding: 15px;}
+.chart-list-wrapper {overflow-y:auto;max-height:360px}
+#DrillDownDetails{padding:0}
+#DrillDownDetails .course-item{width:100%;list-style:none;margin-bottom:15px;font-family:'signikasemibold';float:right}
+#DrillDownDetails .course-item h3{margin:0;margin-top:10px;font-size:18px}
+#DrillDownDetails .course-item > a {float:right;display:inline-block;overflow:hidden;}
+#DrillDownDetails .course-item img{height:100px;}
+.course-listing-data {float:right;}
+#DrillDownDetails .course-item .publishing-date {padding:0px;}
+#DrillDownDetails .publishing-date time{margin:0;font-size:14px}
+#DrillDownDetails .course-owner{margin-right:5px;font-family: 'signikaregular';font-size: 14px;}
+.DrillDownHeader{font-family:'signikasemibold';padding: 10px;font-size: 1.5em;margin-top:0px}
+#EmptyDashboardDiv {text-align:center;height:430px;padding-top: 160px;font-size: 2.2em;}
+#EmptyDashboardDiv a {margin-top: 20px;font-size: 1em;display:block;clear:both}
+.dashboard-header {margin-bottom: 12px;}
+.centered-cont {/*max-width: 1166px;min-width: 980px*/width:93%;margin:auto;float:none!important}
+.dashboard-header {margin-top:0px!important}
+.dashboard-header h1{height: 100%;padding: 22px 0px 35px 0px;}
+.slimScrollBar {left:1px}
+.remaining-session {font-family: 'signikaregular';font-size: 14px;}
+
+/* FAQ */
+#FAQ{direction:rtl;padding-top:10px}
+ul.faq-list-question{margin-top:20px;list-style:none;}
+ul.faq-list-question li{position:relative;margin:23px 0px;padding:20px;min-width:380px;margin-left:0px;margin-right:7px}
+ul.faq-list-question li h2{margin:0;font-size:18px;font-weight:700;font-family: 'droid_arabic_kufiregular';cursor:pointer}
+ul.faq-list-question li p{margin:15px 0px;font-size:16px;font-family:  Tahoma;}
+ul.faq-list-question .collapse-btn{position:absolute;width:46px;height:28px;border-bottom-right-radius:4px;border-top-right-radius:4px;border-bottom-left-radius:0px;border-top-left-radius:0px;top:10px;right:-49px;left:auto}
+ul.faq-list-question .collapse-btn a{width:24px;height:21px;margin:4px 10px;border-radius:3px;display:block;text-indent: -9999px;}
+span.answer-text {transform: rotate(-90deg);-ms-transform: rotate(90deg);-moz-transform: rotate(90deg);-o-transform: rotate(90deg);-webkit-transform: rotate(90deg);display:inline-block;position:absolute;left:auto;right:-35px;top:70px;font-family:'signikaregular';font-style:italic}
+.faq-list-question li h2 {margin-right:-68px!important;padding: 0px 66px 0px 0px;}
+
+/* Competencies */
+#ProfessionalStandards{padding-top:17px}
+#CompetenciesTree li, #CompetenciesTree li a{font-size:15px}
+#CompetenciesTree .dynatree-expander, #CompetenciesTree .dynatree-connector {display:inline-block;width:0px;vertical-align: middle;}
+#CompetenciesTree a{text-decoration:none}
+#CompetenciesTree > ul > li > span {width: 100%;height: auto;display: inline-block;padding-right:40px}
+#CompetenciesTree span.dynatree-node a {font-size: 15px;display: inline-block;font-family: 'signikaregular';margin-right: 15px;width:90%;white-space: normal;} 
+#CompetenciesTree span.dynatree-has-children a {margin-right: 15px;}
+.tab-content #CompetenciesTree ul li {padding-left:0px;padding-right:15px;margin-bottom: 0px;}    
+#CompetenciesTree > ul.dynatree-container > li {height:auto;padding-right:0px}
+#CompetenciesTree > ul > li > span a {margin: 4px;font-weight: 700;margin-right:8px;}
+#CompetenciesTree a{line-height: 28px;display:inline-block}
+#CompetenciesTree li li .dynatree-has-children, #CompetenciesTree > ul > li > ul > li{float:right;width:100%}
+#CompetenciesTree > ul > li > span ~ ul {border: 1px #888380 solid;padding: 8px;float: right;}
+#CompetenciesTree > ul > li > ul > li:nth-child(odd) ul {float: right;margin-bottom: 5px;}
+#CompetenciesTree > ul > li > ul > li:nth-child(odd) ul li{background: #fff;float: right;margin-bottom: 2px;margin-right:15px}
+#CompetenciesTree > ul > li > ul > li:nth-child(even) ul {float: right;margin-bottom: 5px;}
+#CompetenciesTree > ul > li > ul > li:nth-child(even) ul li{float: right;margin-bottom: 2px;background:#f2f2f2;margin-right:15px}
+#CompetenciesTree ul, #CompetenciesTree ul li, #CompetenciesTree .dynatree-node {width:100%;clear:both}
+#CompetenciesTree span  a{cursor:default}
+#CompetenciesTree .dynatree-has-children > a{cursor:pointer}
+/* Competencies Popup */
+.Competencies-action-btns{text-align: left;margin-top:10px}
+.Competencies-action-btns button{float:none;margin-left:4px}
+.Competencies-action-btns button:hover {float:none}
+.Competencies-action-btns .cancel-link{font-size: 16px;margin-left: 25px;}
+.fadeBackground{display: none;opacity: 0.5;overflow: auto;overflow-y: scroll;position: fixed;top: 0;right: 0;bottom: 0;left: 0;z-index: 1050;-webkit-overflow-scrolling: touch;outline: 0}
+span.dynatree-selected a {font-style: normal!important;}
+#competenciesModal .modal-title{display:inline-block;padding-bottom:10px}
+#competenciesModal .modal-header{padding-bottom:0px}
+#competenciesModal .modal-dialog{margin-top:100px}
+#competenciesModal .modal-content {max-height: 650px;overflow-y: auto;overflow-x:hidden}
+#competenciesModal .modal-content .close {width:auto!important}
+#competenciesModal #CompetenciesTree > ul.dynatree-container > li {float: right;}
+
+/* Filtering tree */
+#filter-accordion .dynatree-title,#filter-accordion .dynatree-checkbox,#filter-accordion dynatree-expander{display:inline-block}
+#tree .dynatree-radio{margin-top:10px;display:none}
+#filter-accordion ul.dynatree-container a:link, #tree ul.dynatree-container a:hover, #tree ul.dynatree-container a:visited {display: inline-block;}
+#filter-accordion .dynatree-node {	display:block!important}
+.filter-by {margin-left: 29px;padding: 10px;}
+div.filter-by h2{color:#575757;font:700 18px 'signikasemibold'!important;margin-top:0px}
+
+/* Course Schedule */ 
+.sessionCollapsed .session-head h3{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.sessionCollapsed .session-details{display:none}
+.sessionExpanded .session-head h3{overflow:visible;text-overflow:ellipsis;white-space:normal;}
+.sessionExpanded .session-details{display:block}
+#SessionsDetails{padding-top:10px}
+.session-head{cursor:pointer}
+.tab-content .progress-section ul li {padding-right:15px}
+.progress-section{position:relative;margin:23px 0px;padding:20px;width:380px;margin-right:7px}
+.progress-section h3{margin:0;font-size:18px;font-weight:700;font-family: 'signikasemibold';}
+.progress-section p{margin:15px 0px;font-size:16px;font-family: 'signikalight'}
+.progress-section .collapse-btn{position:absolute;width:46px;height:28px;border-bottom-right-radius:4px;border-top-right-radius:4px;top:10px;right:-48px}
+.progress-section .collapse-btn a{width:24px;height:21px;margin:4px 10px;border-radius:3px;display:block;text-indent: -9999px;}
+.publishing-date, .publishing-date time{font-family: 'signikaregular';font-size:15px}
+.publishing-date time{margin-right:10px}
+.btn-start, .btn-start:hover {float:left;min-width:120px!important;padding:5px 15px!important;border-radius: 4px;cursor: pointer;display: inline-block;line-height: 1.42857;margin-bottom: 0;text-align: center;vertical-align: middle;font-size: 16px!important;text-decoration:none}
+.start-session{width:120px;text-align:center}
+.mark-complete, .mark-complete:hover {width:120px;text-align:right}
+.session-completed{width:auto;text-align:center}
+.session-details h4{font-family: 'signikaregular';font-size: 14px;font-weight: bold;}
+.session-details ul li {font-family: 'signikaregular';font-size: 14px;}
+.session-materials{font-weight:normal;list-style:none;float:right}
+.session-materials li a{font-weight:normal;text-decoration:none;margin-right:10px}
+.session-head {margin-right:-66px;padding-right:68px;}
+
+/** Profile view **/
+.edit-mood-cont{padding:20px;display:inline-block;position:relative}
+.profile-head-details {width:75%}
+.profile-head-details input[type=radio]:focus,.profile-head-details input[type=radio]:hover,.profile-head-details input[type=radio]{border:none;}
+.profile-head-details h2{font-family:"droid_arabic_kufiregular";font-size:1.8em;margin:0;margin-top:10px}
+.profile-head-details .job-title{font-family:"trebuchet_msregular";font-size:1.4em;margin-bottom:7px;margin:0px}
+.profile-head-details .view-text{font-family:"trebuchet_msregular";font-size:1.2em;width:100%;float:right}
+.profile-head-details .school-name{margin-top:28px;}
+.profile-head-details .date-icon,.profile-head-details .user-location, .profile-head-details .gender{margin-top:8px;}
+.profile-head-details .edit-profile-btn{margin-top: 20px}
+.interests-list li{display: inline-block;}
+.interests-list li a{font-size:1.2em;font-family:'signikaregular';margin-left:5px;text-decoration:underline;}
+.interests-list li a:hover{text-decoration:none;}
+.interests-list li:after{content: ", "}
+.interests-list li:last-child:after{content: "."}
+.profile-view button.cancel-session, .profile-view button.save-session{padding:5px 35px 5px 13px;float:none;margin:25px 0px 5px 15px;font-family: "droid_arabic_kufiregular"}
+.courses, .experience, .findme, .interests, .user-location, .personal, .reviews, .school-name, .students, .about, .date-icon{
+	padding-right:40px;
+}
+.profile-social li{float:right;margin-left:10px}
+.lnkdn a, .gglp a, .fba a, .twt a, .behnc a, .pint a{width:30px;height:30px;display:inline-block;}
+.lnkdn-bg, .gglp-bg, .fba-bg, .twt-bg, .behnc-bg, .pint-bg{display:inline-block;padding-left:40px;padding-top:3px;height:30px}
+.user-details legend{font-family:"droid_arabic_kufiregular";font-size:1.6em;border:0px;margin-top:22px;float:right}
+.user-details fieldset{padding:0px;padding-bottom:5px;}
+.user-details{padding:25px 30px;}
+.profile-view{font-size: 1.4em;font-family: "droid_arabic_kufiregular"}
+.profile-view .multi-field-row .first-set{margin-left:20px}
+.profile-view fieldset{position:relative}
+.profile-view dl{display: block}
+.profile-view dd, .profile-view dt{display: inline-block;margin:0}
+.profile-view ul{padding: 0px; list-style: none}
+.profile-img-cont{display:inline-block;margin-bottom:10px;margin-left:20px;float:right;width:200px;height:200px;position:relative}
+.profile-img-cont img{width:100%;height:200px}
+.profile-img-cont input[type="file"], .Firm-logo input[type="file"]{position:absolute;bottom:0px;}
+.profile-head-details{float:right;}
+.profile-head{padding:27px 0px;margin-bottom: 27px;}
+.profile-view .edit-profile-btn, .profile-view .edit-profile-btn:hover{float:none}
+.profile-view .edit-btn, .profile-view .edit-btn:hover {margin:0px!important;left:0px;top:20px;position:absolute}
+.BasicInfoViewMode{position: relative;}
+.profile-head .edit-btn,.profile-head .edit-btn:hover{top:0px;}
+#aboutMeViewMode p{font-size: 1.2em;font-family: 'droid_arabic_kufiregular';}
+.side-border {display:inline-block;padding-right:20px;position:absolute;top:20px;left:20px;overflow:hidden;}
+.Firm-logo{width:171px;height:121px;display:block;overflow:hidden;float:left;}
+.Firm-logo img{width:100%;height:100%}
+.from-to-arrow{width:20px;height:25px;float:right}
+.remove-entry{position: absolute;bottom: 20px;left: 20px;padding-right:25px}
+.experience-item{position:relative;min-height:200px;padding:20px 0px;display:inline-block;width:100%}
+.findme-form .form-row{padding-bottom:10px;margin-bottom:10px}
+.findme-form .form-row:last-of-type{margin-bottom:0px;}
+.experience-item .Firm-logo{top:40px;left:0px;position:relative}
+.experience-item .text-data{font-family: 'droid_arabic_kufiregular';}
+.experience-position{font-size: 1.5em;margin:0px}
+.experience-org-name{font-size:1.2em;}
+.publishing-date{font-size: 1em;}
+.experience-item .publishing-date time{margin:0px}
+.experience-item p{top:15px;}
+.dashed{margin:0px 5px;}
+.div-no-data{margin-bottom:20px;}
+.div-no-data span, .div-no-data a{font-family: "droid_arabic_kufiregular";font-size: 1.2em;}
+.div-no-data a{text-decoration:underline}
+.div-no-data a:hover{text-decoration:none}
+.profile-view input,.profile-view textarea{font-size:1.1em;font-family:'droid_arabic_kufiregular';}
+.gender {padding-right:40px;}
+.image-picker{display:none!important;}
+.Firm-logo input[type="file"], .profile-img-cont input[type="file"]{opacity:0;height:38px;z-index:99999999;cursor:pointer}
+.Firm-logo .img-picker-cont ,.profile-img-cont .img-picker-cont{position:absolute;bottom:0px;opacity:0.5;right:20px;height:38px}
+.profile-img-cont .img-picker-cont{right:0px}
+.Firm-logo .image-picker, .profile-img-cont .image-picker{width:135px;margin:0px 20px;border:0;padding-right:30px;margin-top:5px;display:block!important}
+
+
+/* login screen */
+.loginFieldset {padding: 35px 30px;width:383px;margin:auto;}
+.loginFieldset .form-row{display:inline-block;margin-bottom:25px}
+.loginFieldset label{margin: 0px;font-family: signikaregular;font-size: 14px;}
+.loginFieldset input[type="checkbox"]{height:auto;margin:0px;}
+.loginFieldset input[type="text"], .loginFieldset input[type="password"]{width: 100%;height:40px;font-size:14px}
+.loginHead{width: 120px;margin:auto;text-align: center;font-size:35px;font-family: "droid_arabic_kufiregular";}
+.loginHead img{margin-top: 31px;}
+.loginActionArea {padding-top: 20px;display: inline-block;width: 100%;}
+.loginActionArea a{margin:5px 0px;display:inline-block;}
+.validation-summary-errors ul{font-size:14px;list-style:none;margin:0}
+
+/** footer **/
+footer.masterFooter{ font:1.4em 'trebuchet_msregular'; text-decoration:none; padding: 15px 0px; text-align:right;width:100%}
+footer.masterFooter .footer-wrapper{max-width:1166px;min-width:960px;margin:0 auto;text-align:center}
+footer.masterFooter  h4{font-weight:bold;margin-bottom:20px;font:.99em 'droid_arabic_kufiregular';}
+footer.masterFooter .page-header{padding-left:0px;padding-right:0px;}
+footer.masterFooter  a:link,footer.masterFooter  a:hover,footer.masterFooter a:visited{ font:1em 'droid_arabic_kufiregular'; text-decoration:none;}
+footer.masterFooter .list-inline li{padding:0px 13px; float:right; text-align:right;}
+footer.masterFooter .list-inline li:first-child{padding:0px;}
+footer.masterFooter .copy-rights{margin-bottom:5px}
+.details-col{border-left:1px solid #606162;padding-right:0px;padding-top:76px;float:right;padding-left:30px;}
+.about-col{padding-right:31px; float:right;}
+ul.footer-list{margin:0px;padding:0px;}
+ul.footer-list li{padding-right:22px; list-style-type:none;margin-bottom:9px;}
+.twitter,.facebook,.rss{padding-right:24px;margin-bottom:10px;}
+.facebook{height:16px;display:block;}
+
+/* Tokeninput style auto complete  */
+.token-input-list-facebook{border-radius: 5px;height: 70px!important;width:100%;padding: 0px 5px 0px 0px;margin: 5px 0px;display: inline-block;}
+ul.token-input-list-facebook {overflow: auto;min-height: 1%;cursor: text;font-size: 12px;font-family: Verdana;
+    min-height: 1px;z-index: 999;margin: 0;padding: 8px;list-style-type: none;clear: right;}
+ul.token-input-list-facebook li input {border: 0;width: 100px;padding: 3px 8px;margin: 2px 0;-webkit-appearance: caret;}
+li.token-input-token-facebook {overflow: hidden;height: auto !important;height: 15px;margin: 3px;padding: 3px 7px;
+    cursor: default;font-size: 1.2em;font-family: 'droid_arabic_kufiregular';;border-radius: 5px;-moz-border-radius: 5px;-webkit-border-radius: 5px;float: right;white-space: nowrap;}
+li.token-input-token-facebook p {display: inline;padding: 0;margin: 0;}
+li.token-input-token-facebook span {margin-right: 10px;padding-right: 10px;font-weight: bold;cursor: pointer;}
+li.token-input-input-token-facebook {float: right;margin: 0;padding: 0;list-style-type: none;}
+div.token-input-dropdown-facebook {position: absolute;width: 50%;overflow: hidden;cursor: default;
+    font-size: 11px;font-family: 'droid_arabic_kufiregular';z-index: 1;
+}
+div.token-input-dropdown-facebook p {margin: 0;padding: 5px;font-weight: bold;}
+div.token-input-dropdown-facebook ul {margin: 0;padding: 0;width:100%;}
+div.token-input-dropdown-facebook ul li {padding: 5px;margin: 0;list-style-type: none;}
+div.token-input-dropdown-facebook ul li em {font-weight: bold;font-style: normal;}
+
+
+/****************************  different resolution  ****************************/
+/* iPads (landscape) ----------- */
+@media all and (max-width:1144px)
+{   
+    .centered-item, .centered-cont, .header-topbar, .second-bar .wrapper-menu {max-width:initial;min-width:initial;width:90%} 
+    /*.list-course-by-category li{height:402px;}
+     .block-details{ height:400px;}
+     .course-item p.custom-course-item-details{margin-top:4px;}
+     .header-topbar,footer .footer-wrapper,.navbar .second-bar{padding-right:17px;padding-left:17px;}
+     .course-item h4.course-name{margin-top:0px;}
+     .course-img img,.list-course-by-category .course-img{height:227px;}*/
+
+}

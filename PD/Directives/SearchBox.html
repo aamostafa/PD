@@ -1,0 +1,6 @@
+﻿<div class="col-xs-3 search-bar">
+    <input class="txtSearchBox" type="text" ng-model="searchTxt" ng-keypress="checkEnterKey(event=$event)" ng-change="srchTxtChange()" maxlength="30" placeholder="{{'Search'|translate}}">
+                    <input id="btnSearch" type="button" value="button" ng-click="redirect()">
+    <label id="SearchTxtValidation"  style="display:none" >Search cannot contain any of this special characters "!@#$%^&()+=-[]\';,./{}|":<>?"</label>
+    <label id="SearchTxtSpaceValidation"  style="display:none" >You cant search for a space</label>
+                </div>

@@ -1,0 +1,13 @@
+﻿<div class="courseOVerview">
+    <h2>{{'About The Course'|translate}}</h2>
+    <p>{{Course.Details}}</p>
+
+    <h2 ng-show="Course.TargetAudience">{{'Target Audience'|translate}}</h2>
+    <p>{{Course.TargetAudience}}</p>
+    
+    <h2 ng-show="Course.TargetAudience">{{'Participants Will'|translate}}</h2>
+    <p>{{Course.Participants}}</p>
+    
+    <h2 ng-show="Course.TargetAudience">{{'Required Background'|translate}}</h2>
+    <p>{{Course.RequiredBackground}}</p>
+</div>

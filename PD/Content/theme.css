@@ -1,0 +1,106 @@
+﻿/** custom class **/
+body.ms-backgroundImage{color:#6e6e6e;
+                        /*background-image:url('../images/background/body_patternbg.jpg');*/ 
+                        background-repeat:repeat;}
+
+
+
+.sp-dropdown-menu{background: #5E5E5E;padding:10px;}
+.sp-dropdown-menu .sp-dropdown-menu-arrow{background:url('../images/background/u132.png') no-repeat;}
+.sp-dropdown-menu a:link,.sp-dropdown-menu a:hover,.sp-dropdown-menu a:visited{color:#F2F2F2;}
+.sp-dropdown-menu > li > a:hover, .sp-dropdown-menu > li > a:focus{background-color:transparent;color:#F2F2F2;}
+.sp-dropdown-menu  .horizontal-separator{border-bottom:1px solid #F2F2F2;}
+.no-result-msg{background:url('../images/icons/notificiation_icon.png') no-repeat left; color:#575757;}
+
+
+
+/** custom  general bootstrap class**/
+.caret{background:url('../images/icons/dropdown_arrow.png') no-repeat;}
+.page-header{border-color:#515455;}
+.btn-default,.btn-default:hover, .btn-default:focus, .btn-default:active, .btn-default.active, .open .dropdown-toggle.btn-default{background:#f57523;color:#fff;border:1px solid #e05902;}
+.btn-default.Active-enroll,.btn-default.Active-enroll:hover{ background-color: #117801; border-color:#0d5f00}
+
+
+/** custom  core style**/
+.ms-srch-result-noResults{background:url('../images/icons/noticiation_icon.png') no-repeat; color:#575757;}
+
+
+
+/** header **/
+.navbar-default{background:#fff;border-bottom:1px solid #e5e5e5;}
+.second-bar{background:#006c28;}
+/*.navbar-brand{background:url('../images/background/logo.jpg') no-repeat;}*/
+.search-bar{ background:#FFFFFF;border: 0;border-radius: 3px;} 
+.search-bar #btnSearch{background:url('../images/icons/search_icon.png') no-repeat;border:0px;}
+.search-bar input[type="text"]{ border: 0;color: #000;}
+.search-tooltip,.validation-tooltip{border-radius:4px;border:1px solid #f57523;background:#f57523;color:#fff; }  
+.search-tooltip .search-tooltip-arrow,.validation-tooltip .validation-tooltip-arrow{background:url('../images/background/search_tooltip_arrow.png') no-repeat center center;}
+#home-search{color:#a9a9a9;color:#cbcbcb; box-shadow: 0 0 0 rgba(0, 0, 0, 0.075) inset;}
+#home-search:focus{  box-shadow:  0 0 0px #e9e9e9;border-color:#e9e9e9;}
+.left-nav li{border-left:1px solid #005a21;}
+.left-nav li:first-child{border-left:0px;}
+.left-nav li a:link,.left-nav li a:hover,.left-nav li a:visited,.second-bar  a:link,.second-bar  a:hover,.second-bar  a:visited{color:#fff;}
+.left-nav li a.home-icon{
+    /*background:url('../images/background/home_icon_bg.png') no-repeat;*/
+
+}
+#wishlistlink{background:url('../images/icons/wishlist_icon.png') no-repeat;}
+#requestlink{background:url('../images/icons/request_icon.png') no-repeat;}
+#notificationlink{background:url('../images/icons/notification_icon.jpg') no-repeat;}
+.second-bar input.form-control{color:#505050;background:#fff;}
+.second-bar input.form-control:focus{border-color:#f2f2f2;}
+.header-icons .glyphicon{color:#fff;}
+a.profile-icon:link,a.profile-icon:hover,a.profile-icon:visited{
+    /*background:url('../images/background/u20.png') no-repeat left;*/
+
+}
+a.setting-icon:link,a.setting-icon:hover,a.setting-icon:visited{
+    background:url('../images/background/u290.png') no-repeat left;
+
+}
+a.help-icon:link,a.help-icon:hover,a.help-icon:visited{background:url('../images/background/u294.png') no-repeat left;}
+a.logout-icon:link,a.logout-icon:hover,a.logout-icon:visited{background:url('../images/background/u297.png') no-repeat left;}
+.tooltip-popover-title{color: #666666;background:transparent; border-bottom:1px solid #aeaeae;}
+.tooltip-popover{color:#333;}
+.tooltip-popover-content-footer{ background:#e4e4e4;}
+.col-xs-12.notification-item,.col-xs-12.wishlist-item,.col-xs-12.request-item {border-bottom:1px solid #aeaeae;}
+.tooltip-date{color: #868686;}
+.popover-content{background:#fff;}
+.popover-arrow{background:url('../images/background/u122.png') no-repeat;}
+.popover-content .course-name{color: #2F8EBD;}
+.popover-content  .status-bar.pending-approval{color:#868686;}
+.popover-content  .status-bar.approved{color:#009900;}
+.popover-content  .status-bar.rejected{color:#CC3300;}
+.admin-tool{background:url('../images/background/u1.jpg') no-repeat left; padding-left: 33px;min-height:27px; display:inline-block;}
+ a.admin-tool:link, a.admin-tool:hover, a.admin-tool:visited{color:#F2F2F2; text-decoration:none;}
+a.create-course-icon:link,a.create-course-icon:hover,a.create-course-icon:visited{background:url('../images/background/u2.jpg') no-repeat left;}
+a.set-privileges-icon:link,a.set-privileges-icon:hover,a.set-privileges-icon:visited{background:url('../images/background/u3.jpg') no-repeat left;}
+a.upload-icon:link,a.upload-icon:hover,a.upload-icon:visited{background:url('../images/background/u5.jpg') no-repeat left;}
+a.upload-competences-icon:link,a.upload-competences-icon:hover,a.upload-competences-icon:visited{background:url('../images/background/u6.jpg') no-repeat left;}
+
+/* Admin Create Course NAV */
+#WizardLinks span{color:#0a6600;background:#eeeeee;}
+#WizardLinks .wizard-link-selected{color:#000;background:#fff;border-left:11px #0a6600 solid}
+
+/* account-nav */
+#user-dropdown{color:#117801!important;
+               /*background: url('../images/account-sparator.jpg') no-repeat left center;*/
+
+}
+a[id$="lnkSwitcher"] {background:#f7f7f7;border:1px #e4e4e4 solid;color:#006c28}
+.selected-menu-item {background:#028e36}
+
+/* Create Course Link */
+div[id$="divCreateCourse"] a{color:#117801!important;background:url('../images/create-new.jpg') no-repeat left center!important;padding-left:22px}
+
+/** footer **/
+footer{color:#b3b4b5; background:#2b3336;}
+footer  h4{color:#fff;}
+footer a:link,footer a:hover,footer  a:visited{color:#b3b4b5;}
+footer .list-inline li{border-left:1px solid #818282;}
+footer .list-inline li:first-child{border-left:0px;}
+footer .details-col{background:url('../images/background/footer_logo.png') no-repeat;}
+ul.footer-list li{background:url('../images/background/footer_list_bg.png') no-repeat 2px;}
+.twitter{background:url('../images/background/twitter.png') no-repeat;}
+.rss{background:url('../images/background/rss.png') no-repeat;}
+.facebook{background:url('../images/background/facebook.png') no-repeat;}
