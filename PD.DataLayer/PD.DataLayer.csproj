@@ -277,13 +277,13 @@
     <Compile Include="Migrations\201410141039396_AddStartDate&amp;EndDateToSession.Designer.cs">
       <DependentUpon>201410141039396_AddStartDate&amp;EndDateToSession.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201410151146531_test.cs" />
-    <Compile Include="Migrations\201410151146531_test.Designer.cs">
-      <DependentUpon>201410151146531_test.cs</DependentUpon>
+    <Compile Include="Migrations\201410191421262_AddMentorIdToUserProfile.cs" />
+    <Compile Include="Migrations\201410191421262_AddMentorIdToUserProfile.Designer.cs">
+      <DependentUpon>201410191421262_AddMentorIdToUserProfile.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201410151214111_removetest.cs" />
-    <Compile Include="Migrations\201410151214111_removetest.Designer.cs">
-      <DependentUpon>201410151214111_removetest.cs</DependentUpon>
+    <Compile Include="Migrations\201410191436292_AddMentorId.cs" />
+    <Compile Include="Migrations\201410191436292_AddMentorId.Designer.cs">
+      <DependentUpon>201410191436292_AddMentorId.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="ProfessionalDevelopmentEntities.cs" />
@@ -399,11 +399,11 @@
     <EmbeddedResource Include="Migrations\201410141039396_AddStartDate&amp;EndDateToSession.resx">
       <DependentUpon>201410141039396_AddStartDate&amp;EndDateToSession.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201410151146531_test.resx">
-      <DependentUpon>201410151146531_test.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201410191421262_AddMentorIdToUserProfile.resx">
+      <DependentUpon>201410191421262_AddMentorIdToUserProfile.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201410151214111_removetest.resx">
-      <DependentUpon>201410151214111_removetest.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201410191436292_AddMentorId.resx">
+      <DependentUpon>201410191436292_AddMentorId.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

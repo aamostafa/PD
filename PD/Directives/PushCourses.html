@@ -10,14 +10,16 @@
                 <ul class="selected-courses">
                     <li ng-repeat="course in coursesToPush">
                        {{course.Name}}
-                       <button ng-click="RemoveCourse(course)">X</button>
+                       <button ng-click="RemoveCourse(course)" ng-hide="coursesToPush.length <= 1">X</button>
                     </li>
+                    <span class="hint-msg" ng-show="coursesToPush.length <= 1">{{'One course at least should be available to be pushed.'|translate}}</span>
+
                 </ul>
                 <div class="push-course-filter-cont">
                     <header>Filter people</header>
                     <div class="form-row">
                         <span class="Title-item" ng-repeat="title in filters.Titles">
-                        <input type="checkbox"  value="title.Id">{{title.Name}}
+                        <input type="checkbox"  ng-model="title.selected" ng-value="title.Id" ng-change="SelectTitle(title)" />{{title.Name}}
                             </span>
                     </div>
                     <div class="form-row">
@@ -59,23 +61,23 @@
                         </div>
                     </div>
                 </div>
-                <ul class="people-listing">
+                  <button type="button" ng-click="searchUsers()" >Search</button>
+
+                <ul class="people-listing" ng-repeat="user in searchResult">
                     <li>
                         <img />
-                        <h3>Alaa Diab</h3>
+                        <h3>{{user.UserName}}</h3>
                         <button>X</button>
                     </li>
-                    <li>
-                        <img />
-                        <h3>Ahmed Salem</h3>
-                        <button>X</button>
-                    </li>
+                    
                 </ul>
+
+                <button type="button" ng-click="loadMore()" >Load More</button>
             </div>
 
             <footer class="Competencies-action-btns">
 
-                <button ng-click="" class="filter-link pd-btn" title="Filter">{{"Assign"|translate}}</button>
+                <button ng-click="" class="filter-link pd-btn" title="Filter" ng-class="{btnDisabled : coursesToPush.length <= 0}" ng-disabled="coursesToPush.length <= 0">{{"Assign"|translate}}</button>
                 <button ng-click="cancelPushCourses()" data-dismiss="modal" aria-hidden="true" class="cancel-link pd-btn btn-cancel" title="Cancel">{{"Cancel"|translate}}</button>
 
             </footer>

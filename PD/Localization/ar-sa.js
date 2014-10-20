@@ -129,10 +129,17 @@
         'Edit Profile': 'تعديل الصفحة الشخصية',
         'Profile Image': 'الصورة الشخصية',
         'Edit': 'تعديل',
-        'Firm name':'اسم الشركة',
+        'Firm name': 'اسم الشركة',
+        'Firm Name is Required': 'من فضلك أدخل اسم الشركة',
+        'Please enter Firm name less than 255 characters': 'من فضلك أدخل اسم الشركة أقل من 255 حرف',
         'Name': 'الاسم',
         'Title': 'المسمى الوظيفي',
-        'Location':'موقع العمل',
+        'Title is Required':'من فضلك أدخل المسمى الوظيفي',
+        'Please enter Title less than 255 characters': 'من فضلك أدخل المسمى الوظيفي أقل من 255 حرف',
+        'Location': 'موقع العمل',
+        'Please enter Location less than 255 characters': 'من فضلك أدخل موقع العمل أقل من 255 حرف',
+        'Start Date is required': 'من فضلك أدخل تاريخ البدء',
+        'End Date is required': 'من فضلك أدخل تاريخ الانتهاء',
         'About Me': 'معلومات عني',
         'Place of work': 'مكان العمل',
         'Country': 'المدينة',
@@ -141,6 +148,7 @@
         'Time Period': 'الفترة',
         'I currently work there': 'أنا حاليا اعمل هناك',
         'Job Description': 'طبيعة العمل',
+        'Please enter Job Description less than 1000 characters' : 'من فضلك أدخل طبيعة العمل أقل من 1000 حرف',
         'Remove this entry': 'إزالة هذا السجل',
         'Experience': 'الخبرة',
         'Interests': 'الاهتمامات',
@@ -183,6 +191,7 @@
         'Assign': 'تعيين',
         'Cancel Pushing':'إلغاء النشر',
         'Assign Courses': 'نشر الدورات التدريبية',
-        'Push these courses': 'نشر هذه الدورات التدريبية'
+        'Push these courses': 'نشر هذه الدورات التدريبية',
+        'One course at least should be available to be pushed.': 'دورة تدريبية واحدة على الأقل ينبغي أن تكون متوفرة للنشر'
 	});
 });

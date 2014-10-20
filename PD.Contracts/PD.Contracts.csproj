@@ -70,8 +70,9 @@
     <Compile Include="Entities\webpages_Membership.cs" />
     <Compile Include="Entities\webpages_OAuthMembership.cs" />
     <Compile Include="Entities\webpages_Roles.cs" />
-    <Compile Include="Interfaces\IUsersFiltersService.cs" />
+    <Compile Include="Interfaces\IUserService.cs" />
     <Compile Include="Entities\UserFilters.cs" />
+    <Compile Include="Entities\SearchCriteria.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

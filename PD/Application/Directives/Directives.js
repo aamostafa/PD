@@ -734,20 +734,23 @@ app.directive('courseCard', function () {
             //showPushSelect
             $(element).hover(
                    function () {
-                       var imgHeight = $(element).find('.course-img').height();
-                       var trimDetailsTxt = $(element).find('.custom-course-item-details');
-                       smartTrimText(trimDetailsTxt, 250);
+                       if (!$scope.showpushselect) {
+                           var imgHeight = $(element).find('.course-img').height();
+                           var trimDetailsTxt = $(element).find('.custom-course-item-details');
+                           smartTrimText(trimDetailsTxt, 250);
                            $(element).find('.course-img').stop().animate({ "top": -(imgHeight) + "px" }, "slow");
-                       $(element).find('.block-details').stop().animate({ "top": "0px" }, "slow");
-                       $(element).find('p.custom-course-item-details,footer.favorite-bar-hover').stop().fadeTo("slow", 1);
-
+                           $(element).find('.block-details').stop().animate({ "top": "0px" }, "slow");
+                           $(element).find('p.custom-course-item-details,footer.favorite-bar-hover').stop().fadeTo("slow", 1);
+                       }
+                       
                    }, function () {
-                       var imgHeight = $(element).find('.course-img').height();
-                       //alert(imgHeight);
-                       $(element).find('.course-img').stop().animate({ "top": "0px" }, "slow");
-                       $(element).find('.block-details').stop().animate({ "top": imgHeight + "px" }, "slow");
-                       $(element).find('p.custom-course-item-details,footer.favorite-bar-hover').stop().fadeTo("slow", 0);
-
+                       if (!$scope.showpushselect) {
+                           var imgHeight = $(element).find('.course-img').height();
+                           //alert(imgHeight);
+                           $(element).find('.course-img').stop().animate({ "top": "0px" }, "slow");
+                           $(element).find('.block-details').stop().animate({ "top": imgHeight + "px" }, "slow");
+                           $(element).find('p.custom-course-item-details,footer.favorite-bar-hover').stop().fadeTo("slow", 0);
+                       }
                    }
          );
         },
@@ -1176,9 +1179,11 @@ app.directive('pushCourses', function () {
                 console.log(newval);
                 console.log("Push Courses: " + scope.coursesToPush);
             })
-            // console.log("Push Courses: " + scope.coursesToPush);
         },
         controller: function ($scope, $element, $attrs, $routeParams, userServices) {
+
+            $scope.SelectedTitles = [];
+            $scope.PageIndex = 0;
             $scope.RemoveCourse = function (course) {
                 $scope.coursesToPush = $scope.coursesToPush.filter(function (el) {
                     course.selected = false;
@@ -1190,6 +1195,35 @@ app.directive('pushCourses', function () {
                 $scope.filters=userFilters.data;
             });
 
+            $scope.searchUsers = function ()
+            {
+                $scope.SearchCriteria = { Gender: $scope.GenderFilter, JoiningPeriod: $scope.NewComer, TitlesID: $scope.SelectedTitles };
+                $scope.Size = 2;
+                
+                userServices.getBy($scope.SearchCriteria, $scope.Size, $scope.PageIndex).then(function (userFilters) {
+                     $scope.searchResult= userFilters.data;
+            });
+
+            }
+            
+            $scope.SelectTitle = function (title) {
+                if (title.selected == true) {
+                    $scope.SelectedTitles.push(title.Id);
+                } else {
+                    var index = $scope.SelectedTitles.indexOf(title.Id);
+                    if (index > -1) {
+                        $scope.SelectedTitles.splice(index, 1);
+                    }
+                }
+
+            }
+            $scope.loadMore = function () {
+                $scope.PageIndex++;
+                userServices.getBy($scope.SearchCriteria, $scope.Size, $scope.PageIndex).then(function (userFilters) {
+                    $scope.searchResult = $scope.searchResult.concat(userFilters.data);
+                });
+            }
+
         }
         //controller: function ($scope, $element, $attrs, datacontext) {
         //    $scope.RemoveCourse = function (course) {
@@ -1199,6 +1233,8 @@ app.directive('pushCourses', function () {
     }
 
 });
+
+
 
 //If you want to display the error image when ngSrc is blank you can add this:
 

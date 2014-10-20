@@ -13,7 +13,7 @@ namespace PD.DependencyInjection
     {
        public static void RegisterServices(IKernel kernel)
        {
-           kernel.Bind<IUsersFiltersService>().To<UsersFiltersService>();
+           kernel.Bind<IUserService>().To<UserService>();
        }
     }
 }

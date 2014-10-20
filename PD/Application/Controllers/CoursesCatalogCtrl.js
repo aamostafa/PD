@@ -1,5 +1,6 @@
 ﻿app.controller('CoursesCatalogCtrl', function ($scope, $routeParams, $http, dataContext, $translate) {
-    $scope.PagingFlag = true
+    $scope.PagingFlag = true;
+    $scope.showPushSelect = false;
     //Loading importance 
     //1- Sections 2- Cats 3- Courses 4- Compe.
     if ($routeParams.catId) {

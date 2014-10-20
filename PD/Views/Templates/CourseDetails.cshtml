@@ -16,8 +16,8 @@
                 </h2>
                 <h2 ng-show="Course.IsFacetoFace">{{"Face to Face Course"|translate}}
                 </h2>
-                <time class="course-time">{{Course.StartDate | date:"dd-MMM-yyyy"}}
-                </time>
+                <label class="course-time">{{Course.StartDate | date:"dd-MMM-yyyy"}}
+                </label>
                 <label class="course-durtion">
                     2 weeks
                 </label>
@@ -52,8 +52,8 @@
                         {{'Register'|translate}}
                     </button>
 
-                    <button id="A2" role="button" class="btn-start session-completed"
-                        ng-show="Course.isRequested">
+                    <button id="A2" role="button" class="btn-default session-completed"
+                            ng-show="Course.isRequested">
                         {{'Pending Approval'|translate}}
                     </button>
 

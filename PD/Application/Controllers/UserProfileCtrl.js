@@ -36,7 +36,7 @@ app.controller('UserProfileCtrl', function ($scope, dataContext, $translate) {
         $scope.twitterURl = $scope.UserProfiles.TwitterUrl;
         $scope.googleURl = $scope.UserProfiles.GoogleUrl;
         //$scope.myBirthDay = $scope.UserProfiles.BirthDay;
-     
+        $scope.UserExperiences = $scope.UserProfiles.Experiences;
         //for Skip Button
         $scope.isFirstTimeLogin = true;
         if ($scope.UserProfiles.Gender == null || $scope.UserProfiles.UserName == null ||
@@ -200,24 +200,24 @@ app.controller('UserProfileCtrl', function ($scope, dataContext, $translate) {
     //Experiance
     $scope.today = new Date();
 
-    $scope.CurrentlyWorkHereCheck = function () {
-        if ($scope.Experience != undefined) {
-            if ($scope.Experience.CurrentlyWorkHere) {
-                $scope.Experience.EndDate = null;
-                $('#userProfileForm').parsley().destroy();
-                $('#endDate-datepicker').attr('data-parsley-required', 'false');
-                $('#userProfileForm').parsley();
-                return true;
-            }
-            else {
-                $('#userProfileForm').parsley().destroy();
-                $('#endDate-datepicker').attr('data-parsley-required', 'true');
-                $('#endDate-datepicker').attr('data-parsley-required-message', $translate.instant('End Date is required'));
-                $('#userProfileForm').parsley();
-                return false;
-            }
-        }
-    }
+    //$scope.CurrentlyWorkHereCheck = function () {
+    //    if ($scope.Experience != undefined) {
+    //        if ($scope.Experience.CurrentlyWorkHere) {
+    //            //$scope.Experience.EndDate = null;
+    //            $('#userProfileForm').parsley().destroy();
+    //            //$('#endDate-datepicker').attr('data-parsley-required', 'false');
+    //            //$('#userProfileForm').parsley();
+    //            return true;
+    //        }
+    //        else {
+    //            //$('#userProfileForm').parsley().destroy();
+    //            //$('#endDate-datepicker').attr('data-parsley-required', 'true');
+    //            //$('#endDate-datepicker').attr('data-parsley-required-message', $translate.instant('End Date is required'));
+    //            //$('#userProfileForm').parsley();
+    //            //return false;
+    //        }
+    //    }
+    //}
 
     $scope.SaveExperiance = function (UserProfiles)
     {
@@ -248,15 +248,17 @@ app.controller('UserProfileCtrl', function ($scope, dataContext, $translate) {
 
         $scope.myExperienceEditMode=false
     }
-    $scope.EditMyExperience = function (experience) {
+    $scope.EditMyExperience = function (experience,index) {
         $scope.Experience = experience;
         if ($scope.Experience.EndDate == null)
             $scope.Experience.CurrentlyWorkHere = true;
-        $scope.myExperienceEditMode = true
+        $scope.myExperienceEditMode = true;
+        dataContext.deleteExperiance(experience);
+        
     }
     $scope.RemoveExperience = function () {
-        dataContext.deleteExperiance($scope.Experience);
-        $scope.myExperienceEditMode = false
+        //dataContext.deleteExperiance($scope.Experience);
+        //$scope.myExperienceEditMode = false
     }
     $scope.AddExperience = function () {
         $scope.Experience = null;

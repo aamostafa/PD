@@ -6,10 +6,24 @@ userServices.factory('userServices', function ($http) {
        return $http.get('/api/UsersFilters')
     };
     
-
+    var getBy = function (searchCriteria, Size, PageIndex) {
+     
+        var data={
+            searchCriteria:JSON.stringify(searchCriteria),
+            Size: Size,
+            PageIndex:PageIndex
+        }
+        
+        return $http({
+            method: "GET",
+            url: "/api/User",
+            params:data
+        })
+    };
 
     var userServices = {
-        getFilters: getFilters
+        getFilters: getFilters,
+        getBy: getBy
     };
 
     return userServices;

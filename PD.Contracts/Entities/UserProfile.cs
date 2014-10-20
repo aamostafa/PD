@@ -65,6 +65,10 @@ namespace PD.Contracts.Entities
         public int? MaritalStatusId { get; set; }
         public virtual MaritalStatus MaritalStatus { get; set; }
 
+
+        public int? MentorId { get; set; }
+        public virtual UserProfile Mentor { get; set; }
+
         public virtual ICollection<SessionState> SessionStates { get; set; }
 
         public virtual ICollection<UserCourse> UserCourses { get; set; }

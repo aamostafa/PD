@@ -7,12 +7,13 @@ using System.Web.Http;
 using PD.Contracts.Interfaces;
 using PD.Contracts.Entities;
 
+
 namespace PD.Controllers
 {
     public class UsersFiltersController : ApiController
     {
-        private IUsersFiltersService UsersFiltersService;
-        public UsersFiltersController(IUsersFiltersService IUsersFilters)
+        private IUserService UsersFiltersService;
+        public UsersFiltersController(IUserService IUsersFilters)
         {
             UsersFiltersService = IUsersFilters;
         }

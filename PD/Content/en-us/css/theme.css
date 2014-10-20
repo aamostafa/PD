@@ -15,7 +15,8 @@ body{color:#6e6e6e;background-image:url('../images/background/body_patternbg.jpg
 .btn-default,.btn-default:hover, .btn-default:focus, .btn-default:active, .btn-default.active, .open .dropdown-toggle.btn-default{background:#f57523;color:#fff;border:1px solid #e05902;}
 .btn-default.Active-enroll,.btn-default.Active-enroll:hover{ background-color: #117801; border-color:#0d5f00}
 .btn-default[disabled], .btn-default[disabled]:hover, .btn-default[disabled]:active{background:#b1b1b1;color:#ebebeb;border:1px solid #ddd;}
-.btn-cancel, .btn-cancel:hover{color:#f57523!important;border:none!important;background-color:transparent!important;}
+.btn-cancel{color:#f57523!important;border:1px #f57523 solid!important;background-color:transparent!important;}
+.btn-cancel:hover{color:#fff!important;border:1px #f57523 solid!important;background-color:#b14601!important;}
 /** bootstrap popup **/
 .modal-title{color:#575757;}
 a.filter-competencies-link,a.filter-competencies-link:hover,a.filter-competencies-link:visited{ font-size:1.3em;color:#007a4b; text-decoration:underline;}
@@ -222,6 +223,7 @@ button.details-enroll-btn,button.details-enroll-btn:hover{background:#f57523;col
 .astrisk {color:red}
 button.pd-btn, a.pd-btn{background:#f57523;border:1px #b14601 solid;color:#fff;cursor:pointer}
 button.pd-btn:hover, a.pd-btn:hover {background-color: #b14601;color:#fff}
+button.btn-default.pd-btn:focus {box-shadow: 0 0 15px #f57523;outline: none;}
 .input-label {color:#000}
 .upload-course-image img{border: 1px solid #d4d4d4}
 .upload-course-image input[type="file"] {border: 1px #d4d4d4 solid;}

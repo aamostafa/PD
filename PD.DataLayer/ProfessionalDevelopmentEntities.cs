@@ -108,6 +108,10 @@ namespace PD.DataLayer
                 .WithRequired(e => e.UserProfile)
                 .WillCascadeOnDelete(true);
 
+              modelBuilder.Entity<UserProfile>().
+              HasOptional(e => e.Mentor).
+              WithMany().
+              HasForeignKey(m => m.MentorId);
 
         }
     }

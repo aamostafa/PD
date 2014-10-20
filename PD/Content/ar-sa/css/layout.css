@@ -45,6 +45,7 @@ a:focus {outline: none;}
 .pd-29-right{padding-left:29px;}
 .no-result-msg{padding: 12px 50px;font-size: 1.5em;font-family: 'signikaregular';}}
 .ms-webpartzone-cell{margin-bottom:0px;}
+.text-separator{margin:0px 15px;}
 /* Trim */.ellipsis{overflow:hidden;text-overflow:ellipsis;white-space:nowrap; } 
 /** checkbox style **/
 .toggle {display:inline-block;width:18px;height:15px;float:left;}
@@ -142,8 +143,10 @@ a.upload-competences-icon:link,a.upload-competences-icon:hover,a.upload-competen
 .admin-dropdown li a{padding:10px;}
 
 /*** course catalogue ***/
+.course-section .alert-warning{display:inline-block;width:100%;font-size:1.3em;margin-bottom:15px;}
+.course-section .push-btn-cont{margin-bottom:15px;}
 .course-section .push-btn-cont  button, .course-section .push-btn-cont  button:hover{float:left;margin-right:10px;font-family: "droid_arabic_kufiregular";font-size:1.4em!important}
-.course-section .push-btn-cont  .no-of-items{float:left;clear:both;margin: 7px 0px;font-family: "droid_arabic_kufiregular";font-size:1.2em}
+.course-section  .no-of-items{float:left;margin: 7px 0px;font-family: "droid_arabic_kufiregular";font-size:1.4em;text-align:left;}
 .course-item .pd-checkbox{position:absolute;top:10px;right:10px;z-index:99;width:17px;height:17px;}
 .listing-checkbox{opacity: 0;z-index:100;position:relative;top:-2px;left:-2px;}
 #Push-popup .modal-content {display:inline-block;width:100%}
@@ -204,9 +207,9 @@ ul.list-course-by-category{margin:0px 0px 19px 0px;padding:0px; float:right;}
 .cors-dtls-smry-cntnr{padding:16px;margin-left:30px;width:auto;position:relative}
 .cors-dtls-smry-cntnr .course-ribbon{position: absolute;top:-5px;left:15px;height: 67px;width:57px;overflow: hidden;}
 .cors-dtls-smry-cntnr .course-ribbon img{position:absolute;left:0px}
-.course-data {font-size:1.6em;}
-.course-data dl{clear: both; font-size: 1em; float:left; margin-top:25px; padding:25px 0;}
-.course-data dt{ font-weight:normal; padding-left:0;margin-bottom:22px; font-family:'tahoma';}
+.course-data {font-size:1.6em;display:inline-block;width:100%;}
+.course-data dl{clear: both; font-size: 1em; float:none; margin-top:25px; padding:25px 0;display:inline-block;}
+.course-data dt{ font-weight:normal; padding-left:0;margin-bottom:20px; font-family:'tahoma';}
 .course-data dd{margin-left:0px;margin-right:0px;}
 .course-data ul{margin:0 0 30px 0;}
 .course-data h2{margin:0; font-size: 1.3em;font-family:'droid_arabic_kufiregular';margin-bottom:10px;}
@@ -229,7 +232,7 @@ button.details-enroll-btn,button.details-enroll-btn:hover{margin-right:0px;font-
 .course-summery-bg ul li{margin-top:26px;padding-left:15px;}
 .course-summery-bg ul li:first-child{margin-top:0px;}
 .course-summery-bg h2{font-size: 1.3em;font-family:'droid_arabic_kufiregular';}
-.course-summery-info{padding:15px; height:100%; height: 331px;overflow:hidden;margin:0px;float:left}
+.course-summery-info{padding:15px; height:100%;overflow:hidden;margin:0px;position:absolute;top:0px;left:0px;}
 .nav.nav-tabs li{font-size:1.8em; float:right;}
 .nav.nav-tabs li a:link,.nav.nav-tabs li a:hover,.nav.nav-tabs li a:visited{font-family:'droid_arabic_kufiregular';}
 .nav-tabs > li.active > a:link,.nav-tabs > li.active > a:hover,.nav-tabs > li.active > a:visited{font-family:'droid_arabic_kufiregular';}
@@ -368,6 +371,7 @@ span.input-group-addon {padding: 0px 12px;}
 #SessionForm table td{text-align:center;}
 #SessionForm table .btn-link{padding:0px!important;font-size:10px;}
 #SessionForm .multi-field-row .first-set{margin-left:15px;}
+.timer-validation {margin-right: 16.66666667%;}
 
 /* Admin Create Course NAV */
 #WizardLinks{margin-left:25px;float: right;width: 20%;font-family:'droid_arabic_kufiregular';list-style:none;padding:0px}
@@ -496,7 +500,7 @@ div.filter-by h2{color:#575757;font:700 18px 'signikasemibold'!important;margin-
 .btn-start, .btn-start:hover {float:left;min-width:120px!important;padding:5px 15px!important;border-radius: 4px;cursor: pointer;display: inline-block;line-height: 1.42857;margin-bottom: 0;text-align: center;vertical-align: middle;font-size: 16px!important;text-decoration:none}
 .start-session{width:120px;text-align:center}
 .mark-complete, .mark-complete:hover {width:120px;text-align:right}
-.session-completed{width:auto;text-align:center}
+.session-completed, .session-completed:hover{width:auto;text-align:center;padding:0px}
 .session-details h4{font-family: 'signikaregular';font-size: 14px;font-weight: bold;}
 .session-details ul li {font-family: 'signikaregular';font-size: 14px;}
 .session-materials{font-weight:normal;list-style:none;float:right}

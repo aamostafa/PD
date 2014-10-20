@@ -37,11 +37,10 @@
 
 
         <div class="col-xs-12 course-section">
-            <h3 id="categoryTitle" class="col-xs-6">{{treefilter}}</h3>
-            <div class="col-xs-6 push-btn-cont">
+            <div class="float-rev push-btn-cont">
                 @if (User.IsInRole("Administrator") || User.IsInRole("Mentor"))
                 {
-                    
+
                     <button class="btn-default pd-btn" ng-hide="showAssignbtn" type="button" ng-click="PushCourses()">
                         {{"Push Courses"|translate}}
                     </button>
@@ -52,80 +51,29 @@
                         {{"Cancel Pushing"|translate}}
                     </button>
 
-                    @*<div id="Push-popup" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-                        <div class="modal-dialog modal-lg">
-                            <div class="modal-content">
-                                <header class="modal-header">
-                                    <h4 class="modal-title">{{"Assign Courses"|translate}}</h4>
-                                    <button type="button" class="close" ng-click="cancelPushCourses()" data-dismiss="modal" aria-hidden="true">×</button>
-                                </header>
-
-                                <div class="push-courses-popup">
-                                    <ul class="selected-courses">
-                                        <li>Course 1 <button>X</button></li>
-                                        <li>Course 2 <button>X</button></li>
-                                        <li>Course 3 <button>X</button></li>
-                                    </ul>
-                                    <div class="push-course-filter-cont">
-                                        <header>Filter people</header>
-                                        <div class="form-row">
-                                            <label class=" input-label col-xs-2" for="txtcourseLocation">{{'bla bla'}}</label>
-                                            <div class="col-xs-10">
-                                                <input class="col-xs-12" type="text" />
-                                            </div>
-                                        </div>
-                                        <div class="form-row multi-field-row">
-                                            <div class="col-xs-3 first-set">
-                                                <label class="input-label col-xs-12">{{'bla bla bla'}}</label>
-                                                <input type="text" class="col-xs-12" />
-                                            </div>
-                                            <div class="col-xs-3">
-                                                <label class="input-label col-xs-12">{{'bla bla'}}</label>
-                                                <input type="text" class="col-xs-12" />
-                                            </div>
-                                        </div> 
-                                    </div>
-                                    <ul class="people-listing">
-                                        <li>
-                                            <img />
-                                            <h3>Alaa Diab</h3>
-                                            <button>X</button>
-                                        </li>
-                                        <li>
-                                            <img />
-                                            <h3>Ahmed Salem</h3>
-                                            <button>X</button>
-                                        </li>
-                                    </ul>
-                                </div>
-
-                                <footer class="Competencies-action-btns">
-                                    
-                                    <button ng-click="" class="filter-link pd-btn" title="Filter">{{"Assign"|translate}}</button>
-                                    <button ng-click="cancelPushCourses()" data-dismiss="modal" aria-hidden="true" class="cancel-link pd-btn btn-cancel" title="Cancel">{{"Cancel"|translate}}</button>
-                                    
-                                </footer>
-                            </div>
-                        </div>
-                    </div>*@
                     <push-courses courses-to-push="PushedCourses"></push-courses>
 
                     @*<ul ng-repeat="c in PushedCourses">
                             <li>{{c.Name}}({{c.selected}})</li>
                         </ul>
                     *@
-                    <div class="no-of-items col-xs-8" ng-show="showPushSelect">
-                        <div class="alert alert-warning" ng-show="showPushSelect  && PushedCourses.length == 0"><span class="hint-msg">{{'Select the courses that you want to push to the trainees'|translate}}</span></div>
-                        <span class="float-rev">
-                            {{PushedCourses.length}} {{'Courses selected'|translate}}
-                            <a ng-click="UnSelectAll()">{{'Unselect all'|translate}}</a>
-                        </span>
-                    </div>
-
 
                 }
             </div>
-
+            @if (User.IsInRole("Administrator") || User.IsInRole("Mentor"))
+            {
+                <div class="alert alert-warning" ng-show="showPushSelect"><span class="hint-msg">{{'Select the courses that you want to push to the trainees'|translate}}</span></div>
+            }
+            
+            <h3 id="categoryTitle" class="col-xs-6">{{treefilter}}</h3>
+            @if (User.IsInRole("Administrator") || User.IsInRole("Mentor"))
+            {
+                <div class="no-of-items col-xs-6" ng-show="showPushSelect">
+                    <a ng-click="UnSelectAll()">{{'Unselect All'|translate}}</a>
+                    <span class="text-separator">|</span>
+                    {{PushedCourses.length}} {{'Courses selected out of'|translate}} {{courses.length}}
+                </div>
+            }
             <ul class="col-xs-12 list-course-by-category">
                 <li ng-repeat="course in filterdcourses = (courses | filter:myFilterTest) | startFrom:currentPage*pageSize | limitTo:pageSize" class="col-xs-4 course-item">
                     <course-card course="course"
